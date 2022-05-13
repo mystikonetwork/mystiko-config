@@ -31,7 +31,7 @@
       "depositContracts": [
         {
           "version": 2,
-          "name": "MystikoV2WithTBridgeERC20",
+          "name": "MystikoV2TBridgeERC20",
           "address": "0x40385C519f94Ddec85dAbBcc7045978995E057b3",
           "startBlock": 12241602,
           "bridgeType": "tbridge",
@@ -44,7 +44,7 @@
         },
         {
           "version": 2,
-          "name": "MystikoV2WithTBridgeERC20",
+          "name": "MystikoV2TBridgeERC20",
           "address": "0x15C3Ac08D76Ceb9546B50872D3cB410f08077668",
           "startBlock": 12241622,
           "bridgeType": "tbridge",
@@ -57,7 +57,7 @@
         },
         {
           "version": 2,
-          "name": "MystikoV2WithTBridgeERC20",
+          "name": "MystikoV2TBridgeERC20",
           "address": "0x422830FE9D8B51cc8D999834f40AFfD524289E88",
           "startBlock": 12241612,
           "bridgeType": "tbridge",
@@ -70,7 +70,7 @@
         },
         {
           "version": 2,
-          "name": "MystikoV2WithTBridgeMain",
+          "name": "MystikoV2TBridgeMain",
           "address": "0xec0Aef5aDdBE6f3253e0a2dAd2E45a98F66bB0D5",
           "startBlock": 12241630,
           "bridgeType": "tbridge",
@@ -205,7 +205,7 @@
       "depositContracts": [
         {
           "version": 2,
-          "name": "MystikoV2WithLoopMain",
+          "name": "MystikoV2LoopMain",
           "address": "0x4464BfD7dE8223b47743572129D6BE4bB9B051d8",
           "startBlock": 19062727,
           "bridgeType": "loop",
@@ -214,7 +214,7 @@
         },
         {
           "version": 2,
-          "name": "MystikoV2WithLoopERC20",
+          "name": "MystikoV2LoopERC20",
           "address": "0xef184861c2fA85919f343C434e2E0D1b711C1835",
           "startBlock": 19062653,
           "bridgeType": "loop",
@@ -223,7 +223,7 @@
         },
         {
           "version": 2,
-          "name": "MystikoV2WithLoopERC20",
+          "name": "MystikoV2LoopERC20",
           "address": "0x3867411374500E3B52E670382da1e4993F247f22",
           "startBlock": 19062708,
           "bridgeType": "loop",
@@ -232,7 +232,7 @@
         },
         {
           "version": 2,
-          "name": "MystikoV2WithTBridgeERC20",
+          "name": "MystikoV2TBridgeERC20",
           "address": "0x912E54f8b6AF4d211F88a153279750b865E78096",
           "startBlock": 19062923,
           "bridgeType": "tbridge",
@@ -245,7 +245,7 @@
         },
         {
           "version": 2,
-          "name": "MystikoV2WithTBridgeMain",
+          "name": "MystikoV2TBridgeMain",
           "address": "0x29175CcC7afa0a0336149236F92CfE633047F6F9",
           "startBlock": 19063490,
           "bridgeType": "tbridge",
@@ -258,7 +258,7 @@
         },
         {
           "version": 2,
-          "name": "MystikoV2WithTBridgeERC20",
+          "name": "MystikoV2TBridgeERC20",
           "address": "0xF69721A01Dce998554AFe7D6368510c2d64F473e",
           "startBlock": 19063446,
           "bridgeType": "tbridge",
@@ -271,7 +271,7 @@
         },
         {
           "version": 2,
-          "name": "MystikoV2WithTBridgeERC20",
+          "name": "MystikoV2TBridgeERC20",
           "address": "0xcEC5C98b989150174984DD774Ab1d15977B4066E",
           "startBlock": 19063410,
           "bridgeType": "tbridge",
