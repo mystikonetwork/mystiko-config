@@ -503,8 +503,60 @@
         }
       ],
       "signerEndpoint": "https://api.avax-test.network/ext/bc/C/rpc",
-      "depositContracts": [],
-      "poolContracts": [],
+      "depositContracts": [
+        {
+          "version": 2,
+          "name": "MystikoV2LoopMain",
+          "address": "0x015d360D5957CD148B6721f3011B62eADb01E950",
+          "startBlock": 9684973,
+          "bridgeType": "loop",
+          "poolAddress": "0x21FD01eeB7f16D830A74d5dAE8eC33457E7C4C04",
+          "minAmount": "100000000000000000"
+        },
+        {
+          "version": 2,
+          "name": "MystikoV2LoopERC20",
+          "address": "0x53469e6A9c3a79a243eeA6E74f0e74aB345E49f1",
+          "startBlock": 9685097,
+          "bridgeType": "loop",
+          "poolAddress": "0x2D30408BbfBf6A8A7D75511cF594C0139c1bE17c",
+          "minAmount": "100000000000000000"
+        },
+        {
+          "version": 2,
+          "name": "MystikoV2LoopERC20",
+          "address": "0x7C26c82174E6d696b3d51b717899936626f475cb",
+          "startBlock": 9685186,
+          "bridgeType": "loop",
+          "poolAddress": "0xdFB5b19F9Ce01ffA8251Ba9077E8b9e0108eA721",
+          "minAmount": "100000"
+        }
+      ],
+      "poolContracts": [
+        {
+          "version": 2,
+          "name": "CommitmentPool",
+          "address": "0x21FD01eeB7f16D830A74d5dAE8eC33457E7C4C04",
+          "startBlock": 9683759,
+          "minRollupFee": "10000000000000000"
+        },
+        {
+          "version": 2,
+          "name": "CommitmentPool",
+          "address": "0x2D30408BbfBf6A8A7D75511cF594C0139c1bE17c",
+          "startBlock": 9684989,
+          "assetAddress": "0xc905017B7218Cab43B60f4aBA2F3189f7F00E5CB",
+          "minRollupFee": "10000000000000000"
+        },
+        {
+          "version": 2,
+          "name": "CommitmentPool",
+          "address": "0xdFB5b19F9Ce01ffA8251Ba9077E8b9e0108eA721",
+          "startBlock": 9685119,
+          "assetAddress": "0xD386e6bE9C093ebA4cB064C79eFf44A7AbBAd149",
+          "minRollupFee": "10000"
+        }
+      ],
       "assets": [
         {
           "assetType": "erc20",
@@ -622,8 +674,60 @@
         }
       ],
       "signerEndpoint": "https://aurora-testnet.infura.io/v3/908e7e8a95ba42a9aea33300a8a743cd",
-      "depositContracts": [],
-      "poolContracts": [],
+      "depositContracts": [
+        {
+          "version": 2,
+          "name": "MystikoV2LoopMain",
+          "address": "0xE9619b4233bF28109c7ba6C6Bd70625248105529",
+          "startBlock": 89898743,
+          "bridgeType": "loop",
+          "poolAddress": "0xc5bFDd5c1b0DA143072eF15416db8DF0E4231065",
+          "minAmount": "100000000000000000"
+        },
+        {
+          "version": 2,
+          "name": "MystikoV2LoopERC20",
+          "address": "0x0F483509328f83cA0A1D1e6D7374F7D09f578524",
+          "startBlock": 89899635,
+          "bridgeType": "loop",
+          "poolAddress": "0x4938041cFC8239C9d2031FBEF3F990fc0db09699",
+          "minAmount": "100000000000000000"
+        },
+        {
+          "version": 2,
+          "name": "MystikoV2LoopERC20",
+          "address": "0xC861dA6a7860309E42e61bA74FBd2123202EC599",
+          "startBlock": 89915714,
+          "bridgeType": "loop",
+          "poolAddress": "0x094535Df35b03009E9e73112E672464F5a630143",
+          "minAmount": "100000"
+        }
+      ],
+      "poolContracts": [
+        {
+          "version": 2,
+          "name": "CommitmentPool",
+          "address": "0xc5bFDd5c1b0DA143072eF15416db8DF0E4231065",
+          "startBlock": 89894678,
+          "minRollupFee": "10000000000000000"
+        },
+        {
+          "version": 2,
+          "name": "CommitmentPool",
+          "address": "0x4938041cFC8239C9d2031FBEF3F990fc0db09699",
+          "startBlock": 89899030,
+          "assetAddress": "0x8bF9752F8c9195b603d534038BCb9F6c0C26351E",
+          "minRollupFee": "10000000000000000"
+        },
+        {
+          "version": 2,
+          "name": "CommitmentPool",
+          "address": "0x094535Df35b03009E9e73112E672464F5a630143",
+          "startBlock": 89899814,
+          "assetAddress": "0x2E34eDA41d0E0DFC8E6fe8Fd032827b20C395aD1",
+          "minRollupFee": "10000"
+        }
+      ],
       "assets": [
         {
           "assetType": "erc20",
@@ -636,6 +740,18 @@
             "1000000000000000000000"
           ],
           "assetAddress": "0x8bF9752F8c9195b603d534038BCb9F6c0C26351E"
+        },
+        {
+          "assetType": "erc20",
+          "assetSymbol": "mUSD",
+          "assetDecimals": 6,
+          "recommendedAmounts": [
+            "1000000",
+            "10000000",
+            "100000000",
+            "1000000000"
+          ],
+          "assetAddress": "0x2E34eDA41d0E0DFC8E6fe8Fd032827b20C395aD1"
         }
       ]
     }
