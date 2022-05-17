@@ -59,7 +59,7 @@ export class DepositContractConfig extends ContractConfig<RawDepositContractConf
   }
 
   public get minBridgeFeeNumber(): number {
-    return fromDecimals(this.minBridgeFee, this.assetDecimals);
+    return fromDecimals(this.minBridgeFee, this.bridgeFeeAsset.assetDecimals);
   }
 
   public get minExecutorFee(): BN {
@@ -67,7 +67,7 @@ export class DepositContractConfig extends ContractConfig<RawDepositContractConf
   }
 
   public get minExecutorFeeNumber(): number {
-    return fromDecimals(this.minExecutorFee, this.assetDecimals);
+    return fromDecimals(this.minExecutorFee, this.executorFeeAsset.assetDecimals);
   }
 
   public get asset(): AssetConfig {

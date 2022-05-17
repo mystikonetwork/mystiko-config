@@ -39,11 +39,9 @@ beforeEach(async () => {
     assetAddress: '0x0000000000000000000000000000000000000000',
     recommendedAmounts: rawMystikoConfig.chains[0].recommendedAmounts,
   } as RawAssetConfig);
+  const rawAssetConfig = rawMystikoConfig.chains[0].assets[0];
   assetConfigs = new Map<string, AssetConfig>([
-    [
-      rawMystikoConfig.chains[0].assets[0].assetAddress,
-      new AssetConfig(rawMystikoConfig.chains[0].assets[0]),
-    ],
+    [rawMystikoConfig.chains[0].assets[0].assetAddress, new AssetConfig(rawAssetConfig)],
   ]);
   rawConfig = await RawConfig.createFromFile(
     RawDepositContractConfig,
@@ -102,6 +100,7 @@ test('test bridgeFeeAsset', () => {
   rawConfig.bridgeFeeAssetAddress = undefined;
   config = config.mutate(rawConfig);
   expect(config.bridgeFeeAsset).toStrictEqual(mainAssetConfig);
+  expect(config.minBridgeFeeNumber).toBe(0.02);
   rawConfig.bridgeFeeAssetAddress = '0xBc28029D248FC60bce0bAC01cF41A53aEEaE06F9';
   expect(() => config.mutate(rawConfig)).toThrow(
     new Error(
@@ -128,6 +127,7 @@ test('test executorFeeAsset', () => {
   rawConfig.executorFeeAssetAddress = MAIN_ASSET_ADDRESS;
   config = config.mutate(rawConfig);
   expect(config.executorFeeAsset).toStrictEqual(mainAssetConfig);
+  expect(config.minExecutorFeeNumber).toBe(0.03);
 });
 
 test('test peerContract', () => {
