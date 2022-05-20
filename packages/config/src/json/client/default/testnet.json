@@ -1229,9 +1229,6 @@
         },
         {
           "url": "https://nd-214-128-719.p2pify.com/601ca0e7925b0eabdc7bbd7e220604af"
-        },
-        {
-          "url": "https://rpc.testnet.fantom.network"
         }
       ],
       "signerEndpoint": "https://rpc.testnet.fantom.network",
