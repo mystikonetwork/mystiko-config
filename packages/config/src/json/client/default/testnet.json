@@ -1209,7 +1209,6 @@
     },
     {
       "name": "Fantom Testnet",
-      "network": "fantomtestnet",
       "assetSymbol": "FTM",
       "assetDecimals": 18,
       "recommendedAmounts": [
@@ -1416,7 +1415,6 @@
     },
     {
       "name": "Moonbase Alpha",
-      "network": "moonbase",
       "assetSymbol": "DEV",
       "assetDecimals": 18,
       "recommendedAmounts": [
