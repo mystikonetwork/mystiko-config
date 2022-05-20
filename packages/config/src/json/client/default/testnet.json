@@ -614,6 +614,9 @@
       "explorerUrl": "https://testnet.bscscan.com",
       "providers": [
         {
+          "url": "wss://bsc.getblock.io/testnet/?api_key=71722c7c-f748-4ea3-bacd-6edc2900c4f0"
+        },
+        {
           "url": "https://bsc.getblock.io/testnet/?api_key=71722c7c-f748-4ea3-bacd-6edc2900c4f0"
         },
         {
@@ -1229,6 +1232,9 @@
         },
         {
           "url": "https://nd-214-128-719.p2pify.com/601ca0e7925b0eabdc7bbd7e220604af"
+        },
+        {
+          "url": "https://rpc.testnet.fantom.network"
         }
       ],
       "signerEndpoint": "https://rpc.testnet.fantom.network",
