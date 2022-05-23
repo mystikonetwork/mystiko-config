@@ -66,6 +66,7 @@ export class RawChainConfig extends RawConfig {
   @IsUrl({ protocols: ['http', 'https'], require_tld: false })
   public signerEndpoint: string;
 
+  @Expose()
   @IsInt()
   @IsPositive()
   public eventFilterSize: number = 200000;

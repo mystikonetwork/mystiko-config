@@ -77,6 +77,7 @@ beforeEach(async () => {
     recommendedAmounts: ['1000000000000000000', '10000000000000000000'],
     explorerUrl: 'https://ropsten.etherscan.io',
     explorerPrefix: '/tx/%tx%',
+    eventFilterSize: 1000,
     providers: [providerConfig],
     signerEndpoint: 'https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
     depositContracts: [depositContractConfig],
