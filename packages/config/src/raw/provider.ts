@@ -15,5 +15,5 @@ export class RawProviderConfig extends RawConfig {
   @Expose()
   @IsInt()
   @IsPositive()
-  public maxTryCount: number = 3;
+  public maxTryCount: number = 2;
 }
