@@ -5,7 +5,7 @@ import {
   RawConfig,
   RawLayerZeroBridgeConfig,
   RawMystikoConfig,
-  RawPolyBridgeConfig
+  RawPolyBridgeConfig,
 } from '../raw';
 import { CircuitConfig } from './circuit';
 import { ChainConfig } from './chain';
