@@ -1437,7 +1437,7 @@
         }
       ],
       "signerEndpoint": "https://moonbeam-alpha.api.onfinality.io/public",
-      "eventFilterSize": 3000,
+      "eventFilterSize": 2000,
       "depositContracts": [
         {
           "version": 2,
