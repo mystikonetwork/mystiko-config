@@ -126,6 +126,10 @@
     {
       "name": "Celer Network",
       "type": "celer"
+    },
+    {
+      "name": "LayerZero Bridge",
+      "type": "layerZero"
     }
   ],
   "circuits": [
