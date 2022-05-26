@@ -65,6 +65,20 @@
         },
         {
           "version": 2,
+          "name": "MystikoV2WithLayerZeroERC20",
+          "address": "0x85Bad2d92E225f61D877982E0EFA8CEC0D204fDd",
+          "type": "deposit",
+          "startBlock": 1000000,
+          "bridgeType": "layerZero",
+          "poolAddress": "0xB12713BfA9d1DE339ca14B01F8F14f092ffE75bf",
+          "peerChainId": 97,
+          "peerContractAddress": "0x232D47bB2Cc15344116E5Aed51218bc36134fE48",
+          "minAmount": "10000000000000000",
+          "minBridgeFee": "20000000000000000",
+          "minExecutorFee": "30000000000000000"
+        },
+        {
+          "version": 2,
           "name": "MystikoV2Loop",
           "address": "0x390d485f4d43212d4ae8cdd967a711514ed5a54f",
           "type": "deposit",
@@ -91,6 +105,16 @@
           "version": 2,
           "name": "CommitmentPool",
           "address": "0x20Eb345870059E688c59e89523442ade33C7c813",
+          "type": "pool",
+          "startBlock": 1000000,
+          "assetAddress": "0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a",
+          "minRollupFee": "40000000000000000",
+          "circuits": ["zokrates-2.0-rollup1"]
+        },
+        {
+          "version": 2,
+          "name": "CommitmentPool",
+          "address": "0xB12713BfA9d1DE339ca14B01F8F14f092ffE75bf",
           "type": "pool",
           "startBlock": 1000000,
           "assetAddress": "0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a",
@@ -175,6 +199,20 @@
           "minAmount": "10000000000000000",
           "minBridgeFee": "20000000000000000",
           "minExecutorFee": "30000000000000000"
+        },
+        {
+          "version": 2,
+          "name": "MystikoV2WithLayerZeroERC20",
+          "address": "0x232D47bB2Cc15344116E5Aed51218bc36134fE48",
+          "type": "deposit",
+          "startBlock": 1000000,
+          "bridgeType": "layerZero",
+          "poolAddress": "0x81b7E08F65Bdf5648606c89998A9CC8164397647",
+          "peerChainId": 3,
+          "peerContractAddress": "0x85Bad2d92E225f61D877982E0EFA8CEC0D204fDd",
+          "minAmount": "10000000000000000",
+          "minBridgeFee": "20000000000000000",
+          "minExecutorFee": "30000000000000000"
         }
       ],
       "poolContracts": [
@@ -191,6 +229,15 @@
           "version": 2,
           "name": "CommitmentPool",
           "address": "0x6B8a4ea37C72F1992626eb9bD48d4aA6aa077c47",
+          "type": "pool",
+          "startBlock": 1000000,
+          "assetAddress": "0xaA055A9888e414faF9f0DA3F4cb4C56Df8a4bdA9",
+          "minRollupFee": "12345"
+        },
+        {
+          "version": 2,
+          "name": "CommitmentPool",
+          "address": "0x81b7E08F65Bdf5648606c89998A9CC8164397647",
           "type": "pool",
           "startBlock": 1000000,
           "assetAddress": "0xaA055A9888e414faF9f0DA3F4cb4C56Df8a4bdA9",
@@ -221,6 +268,10 @@
     {
       "name": "Celer Network",
       "type": "celer"
+    },
+    {
+      "name": "LayerZero Bridge",
+      "type": "layerZero"
     }
   ],
   "circuits": [

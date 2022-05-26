@@ -1,15 +1,21 @@
 import { check } from '@mystikonetwork/utils';
 import { BaseConfig } from './base';
-import { RawCelerBridgeConfig, RawConfig, RawMystikoConfig, RawPolyBridgeConfig } from '../raw';
+import {
+  RawCelerBridgeConfig,
+  RawConfig,
+  RawLayerZeroBridgeConfig,
+  RawMystikoConfig,
+  RawPolyBridgeConfig
+} from '../raw';
 import { CircuitConfig } from './circuit';
 import { ChainConfig } from './chain';
-import { CelerBridgeConfig, PolyBridgeConfig, TBridgeConfig } from './bridge';
+import { CelerBridgeConfig, LayerZeroBridgeConfig, PolyBridgeConfig, TBridgeConfig } from './bridge';
 import { BridgeType, CircuitType } from '../common';
 import { DepositContractConfig, PoolContractConfig } from './contract';
 import defaultClientTestnetConfig from '../json/client/default/testnet.json';
 import defaultClientMainnetConfig from '../json/client/default/mainnet.json';
 
-export type BridgeConfigType = CelerBridgeConfig | PolyBridgeConfig | TBridgeConfig;
+export type BridgeConfigType = CelerBridgeConfig | LayerZeroBridgeConfig | PolyBridgeConfig | TBridgeConfig;
 
 export class MystikoConfig extends BaseConfig<RawMystikoConfig> {
   private readonly defaultCircuitConfigs: Map<CircuitType, CircuitConfig>;
@@ -192,6 +198,8 @@ export class MystikoConfig extends BaseConfig<RawMystikoConfig> {
         bridgeConfigs.set(raw.type, new CelerBridgeConfig(raw));
       } else if (raw instanceof RawPolyBridgeConfig) {
         bridgeConfigs.set(raw.type, new PolyBridgeConfig(raw));
+      } else if (raw instanceof RawLayerZeroBridgeConfig) {
+        bridgeConfigs.set(raw.type, new LayerZeroBridgeConfig(raw));
       } else {
         bridgeConfigs.set(raw.type, new TBridgeConfig(raw));
       }
