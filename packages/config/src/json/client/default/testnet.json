@@ -805,7 +805,7 @@
       ]
     },
     {
-      "name": "Polygon Testnet",
+      "name": "Polygon Mumbai",
       "assetSymbol": "MATIC",
       "assetDecimals": 18,
       "recommendedAmounts": [
@@ -1008,7 +1008,7 @@
       ]
     },
     {
-      "name": "Avalanche Testnet",
+      "name": "Avalanche Fuji",
       "assetSymbol": "AVAX",
       "assetDecimals": 18,
       "recommendedAmounts": [
