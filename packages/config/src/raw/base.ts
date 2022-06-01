@@ -1,7 +1,7 @@
-import {readJsonFile} from '@mystikonetwork/utils';
-import {plainToInstance} from 'class-transformer';
-import {ClassConstructor} from 'class-transformer/types/interfaces';
-import {validateObject} from '../common';
+import { readJsonFile } from '@mystikonetwork/utils';
+import { plainToInstance } from 'class-transformer';
+import { ClassConstructor } from 'class-transformer/types/interfaces';
+import { validateObject } from '../common';
 
 export class RawConfig {
   public validate(): Promise<void> {

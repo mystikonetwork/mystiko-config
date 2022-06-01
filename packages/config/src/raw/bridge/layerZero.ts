@@ -1,6 +1,6 @@
-import {Equals} from 'class-validator';
-import {BridgeType} from '../../common';
-import {RawBridgeConfig} from './base';
+import { Equals } from 'class-validator';
+import { BridgeType } from '../../common';
+import { RawBridgeConfig } from './base';
 
 /**
  * @class RawLayerZeroBridgeConfig

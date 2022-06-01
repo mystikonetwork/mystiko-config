@@ -1,6 +1,6 @@
-import {CircuitType} from '../common';
-import {RawCircuitConfig} from '../raw';
-import {BaseConfig} from './base';
+import { CircuitType } from '../common';
+import { RawCircuitConfig } from '../raw';
+import { BaseConfig } from './base';
 
 export class CircuitConfig extends BaseConfig<RawCircuitConfig> {
   public get name(): string {

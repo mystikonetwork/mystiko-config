@@ -1,7 +1,7 @@
-import {Expose, Type} from 'class-transformer';
-import {ArrayUnique, IsArray, IsSemVer, ValidateNested} from 'class-validator';
-import {BridgeType} from '../common';
-import {RawConfig} from './base';
+import { Expose, Type } from 'class-transformer';
+import { ArrayUnique, IsArray, IsSemVer, ValidateNested } from 'class-validator';
+import { BridgeType } from '../common';
+import { RawConfig } from './base';
 import {
   RawAxelarBridgeConfig,
   RawBridgeConfig,
@@ -10,8 +10,8 @@ import {
   RawPolyBridgeConfig,
   RawTBridgeConfig,
 } from './bridge';
-import {RawChainConfig} from './chain';
-import {RawCircuitConfig} from './circuit';
+import { RawChainConfig } from './chain';
+import { RawCircuitConfig } from './circuit';
 
 export type RawBridgeConfigType =
   | RawAxelarBridgeConfig

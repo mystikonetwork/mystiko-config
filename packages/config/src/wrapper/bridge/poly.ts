@@ -1,5 +1,5 @@
-import {RawPolyBridgeConfig} from '../../raw';
-import {BridgeConfig} from './base';
+import { RawPolyBridgeConfig } from '../../raw';
+import { BridgeConfig } from './base';
 
 export class PolyBridgeConfig extends BridgeConfig<RawPolyBridgeConfig> {
   public get explorerUrl(): string {

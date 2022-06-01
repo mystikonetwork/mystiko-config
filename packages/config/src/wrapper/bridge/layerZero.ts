@@ -1,5 +1,5 @@
-import {RawLayerZeroBridgeConfig} from '../../raw';
-import {BridgeConfig} from './base';
+import { RawLayerZeroBridgeConfig } from '../../raw';
+import { BridgeConfig } from './base';
 
 export class LayerZeroBridgeConfig extends BridgeConfig<RawLayerZeroBridgeConfig> {
   public mutate(data?: RawLayerZeroBridgeConfig): LayerZeroBridgeConfig {

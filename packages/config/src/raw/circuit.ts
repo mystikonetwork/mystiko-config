@@ -1,7 +1,7 @@
-import {Expose} from 'class-transformer';
-import {IsArray, IsBoolean, IsEnum, IsNotEmpty, IsString} from 'class-validator';
-import {CircuitType} from '../common';
-import {RawConfig} from './base';
+import { Expose } from 'class-transformer';
+import { IsArray, IsBoolean, IsEnum, IsNotEmpty, IsString } from 'class-validator';
+import { CircuitType } from '../common';
+import { RawConfig } from './base';
 
 export class RawCircuitConfig extends RawConfig {
   @Expose()

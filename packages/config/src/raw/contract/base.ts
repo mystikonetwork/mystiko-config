@@ -1,7 +1,15 @@
-import {Expose} from 'class-transformer';
-import {IsEnum, IsEthereumAddress, IsInt, IsNotEmpty, IsOptional, IsPositive, IsString,} from 'class-validator';
-import {ContractType} from '../../common';
-import {RawConfig} from '../base';
+import { Expose } from 'class-transformer';
+import {
+  IsEnum,
+  IsEthereumAddress,
+  IsInt,
+  IsNotEmpty,
+  IsOptional,
+  IsPositive,
+  IsString,
+} from 'class-validator';
+import { ContractType } from '../../common';
+import { RawConfig } from '../base';
 
 export class RawContractConfig extends RawConfig {
   @Expose()

@@ -1,4 +1,4 @@
-import {Expose} from 'class-transformer';
+import { Expose } from 'class-transformer';
 import {
   ArrayUnique,
   IsArray,
@@ -10,8 +10,8 @@ import {
   IsPositive,
   IsString,
 } from 'class-validator';
-import {AssetType} from '../common';
-import {RawConfig} from './base';
+import { AssetType } from '../common';
+import { RawConfig } from './base';
 
 export class RawAssetConfig extends RawConfig {
   @Expose()
