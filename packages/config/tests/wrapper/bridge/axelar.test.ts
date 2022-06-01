@@ -4,10 +4,7 @@ let rawConfig: RawAxelarBridgeConfig;
 let config: AxelarBridgeConfig;
 
 beforeEach(async () => {
-  rawConfig = await RawConfig.createFromFile(
-    RawAxelarBridgeConfig,
-    'tests/files/bridge/axelar.valid.json',
-  );
+  rawConfig = await RawConfig.createFromFile(RawAxelarBridgeConfig, 'tests/files/bridge/axelar.valid.json');
   config = new AxelarBridgeConfig(rawConfig);
 });
 

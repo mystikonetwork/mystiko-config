@@ -10,13 +10,24 @@ import {
 } from '../raw';
 import { CircuitConfig } from './circuit';
 import { ChainConfig } from './chain';
-import { AxelarBridgeConfig,CelerBridgeConfig, LayerZeroBridgeConfig, PolyBridgeConfig, TBridgeConfig } from './bridge';
+import {
+  AxelarBridgeConfig,
+  CelerBridgeConfig,
+  LayerZeroBridgeConfig,
+  PolyBridgeConfig,
+  TBridgeConfig,
+} from './bridge';
 import { BridgeType, CircuitType } from '../common';
 import { DepositContractConfig, PoolContractConfig } from './contract';
 import defaultClientTestnetConfig from '../json/client/default/testnet.json';
 import defaultClientMainnetConfig from '../json/client/default/mainnet.json';
 
-export type BridgeConfigType = AxelarBridgeConfig|CelerBridgeConfig | LayerZeroBridgeConfig | PolyBridgeConfig | TBridgeConfig;
+export type BridgeConfigType =
+  | AxelarBridgeConfig
+  | CelerBridgeConfig
+  | LayerZeroBridgeConfig
+  | PolyBridgeConfig
+  | TBridgeConfig;
 
 export class MystikoConfig extends BaseConfig<RawMystikoConfig> {
   private readonly defaultCircuitConfigs: Map<CircuitType, CircuitConfig>;

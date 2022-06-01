@@ -1,5 +1,5 @@
 import { BridgeConfig } from './base';
-import {RawAxelarBridgeConfig} from '../../raw';
+import { RawAxelarBridgeConfig } from '../../raw';
 
 export class AxelarBridgeConfig extends BridgeConfig<RawAxelarBridgeConfig> {
   public mutate(data?: RawAxelarBridgeConfig): AxelarBridgeConfig {
