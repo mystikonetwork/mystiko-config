@@ -56,13 +56,13 @@ test('test getBridges', () => {
       .getBridges(3, 97, 'MTT')
       .map((conf) => conf.type)
       .sort(),
-  ).toStrictEqual([BridgeType.CELER, BridgeType.LAYER_ZERO, BridgeType.TBRIDGE]);
+  ).toStrictEqual([BridgeType.AXELAR,BridgeType.CELER, BridgeType.LAYER_ZERO, BridgeType.TBRIDGE]);
   expect(
     config
       .getBridges(97, 3, 'MTT')
       .map((conf) => conf.type)
       .sort(),
-  ).toStrictEqual([BridgeType.CELER, BridgeType.LAYER_ZERO, BridgeType.TBRIDGE]);
+  ).toStrictEqual([BridgeType.AXELAR,BridgeType.CELER, BridgeType.LAYER_ZERO, BridgeType.TBRIDGE]);
   expect(config.getBridges(1024, 97, 'MTT')).toStrictEqual([]);
   expect(config.getBridges(3, 1024, 'MTT')).toStrictEqual([]);
   expect(config.getBridges(3, 97, 'ETH')).toStrictEqual([]);
