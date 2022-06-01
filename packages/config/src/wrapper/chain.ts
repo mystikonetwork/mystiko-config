@@ -1,12 +1,12 @@
-import { check } from '@mystikonetwork/utils';
+import {check} from '@mystikonetwork/utils';
 import BN from 'bn.js';
-import { AssetType, BridgeType, CircuitType } from '../common';
-import { EXPLORER_TX_PLACEHOLDER, RawAssetConfig, RawChainConfig } from '../raw';
-import { AssetConfig, MAIN_ASSET_ADDRESS } from './asset';
-import { BaseConfig } from './base';
-import { CircuitConfig } from './circuit';
-import { DepositContractConfig, PoolContractConfig } from './contract';
-import { ProviderConfig } from './provider';
+import {AssetType, BridgeType, CircuitType} from '../common';
+import {EXPLORER_TX_PLACEHOLDER, RawAssetConfig, RawChainConfig} from '../raw';
+import {AssetConfig, MAIN_ASSET_ADDRESS} from './asset';
+import {BaseConfig} from './base';
+import {CircuitConfig} from './circuit';
+import {DepositContractConfig, PoolContractConfig} from './contract';
+import {ProviderConfig} from './provider';
 
 type AuxData = {
   defaultCircuitConfigs: Map<CircuitType, CircuitConfig>;

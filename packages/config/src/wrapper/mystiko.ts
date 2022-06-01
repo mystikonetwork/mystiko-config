@@ -1,5 +1,7 @@
-import { check } from '@mystikonetwork/utils';
-import { BaseConfig } from './base';
+import {check} from '@mystikonetwork/utils';
+import {BridgeType, CircuitType} from '../common';
+import defaultClientMainnetConfig from '../json/client/default/mainnet.json';
+import defaultClientTestnetConfig from '../json/client/default/testnet.json';
 import {
   RawAxelarBridgeConfig,
   RawCelerBridgeConfig,
@@ -8,19 +10,11 @@ import {
   RawMystikoConfig,
   RawPolyBridgeConfig,
 } from '../raw';
-import { CircuitConfig } from './circuit';
-import { ChainConfig } from './chain';
-import {
-  AxelarBridgeConfig,
-  CelerBridgeConfig,
-  LayerZeroBridgeConfig,
-  PolyBridgeConfig,
-  TBridgeConfig,
-} from './bridge';
-import { BridgeType, CircuitType } from '../common';
-import { DepositContractConfig, PoolContractConfig } from './contract';
-import defaultClientTestnetConfig from '../json/client/default/testnet.json';
-import defaultClientMainnetConfig from '../json/client/default/mainnet.json';
+import {BaseConfig} from './base';
+import {AxelarBridgeConfig, CelerBridgeConfig, LayerZeroBridgeConfig, PolyBridgeConfig, TBridgeConfig,} from './bridge';
+import {ChainConfig} from './chain';
+import {CircuitConfig} from './circuit';
+import {DepositContractConfig, PoolContractConfig} from './contract';
 
 export type BridgeConfigType =
   | AxelarBridgeConfig

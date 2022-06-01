@@ -1,10 +1,10 @@
-import { check, fromDecimals, toBN } from '@mystikonetwork/utils';
+import {check, fromDecimals, toBN} from '@mystikonetwork/utils';
 import BN from 'bn.js';
-import { AssetType, CircuitType } from '../../common';
-import { RawPoolContractConfig } from '../../raw';
-import { AssetConfig } from '../asset';
-import { CircuitConfig } from '../circuit';
-import { ContractConfig } from './base';
+import {AssetType, CircuitType} from '../../common';
+import {RawPoolContractConfig} from '../../raw';
+import {AssetConfig} from '../asset';
+import {CircuitConfig} from '../circuit';
+import {ContractConfig} from './base';
 
 type AuxData = {
   defaultCircuitConfigs: Map<CircuitType, CircuitConfig>;

@@ -1,6 +1,6 @@
-import { RawContractConfig } from '../../raw';
-import { BaseConfig } from '../base';
-import { ContractType } from '../../common';
+import {ContractType} from '../../common';
+import {RawContractConfig} from '../../raw';
+import {BaseConfig} from '../base';
 
 export class ContractConfig<T extends RawContractConfig, A = {}> extends BaseConfig<T, A> {
   public get version(): number {

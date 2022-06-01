@@ -1,3 +1,4 @@
+import {Expose} from 'class-transformer';
 import {
   Equals,
   IsBoolean,
@@ -8,9 +9,8 @@ import {
   IsOptional,
   IsPositive,
 } from 'class-validator';
-import { Expose } from 'class-transformer';
-import { RawContractConfig } from './base';
-import { BridgeType, ContractType } from '../../common';
+import {BridgeType, ContractType} from '../../common';
+import {RawContractConfig} from './base';
 
 export class RawDepositContractConfig extends RawContractConfig {
   @Expose()

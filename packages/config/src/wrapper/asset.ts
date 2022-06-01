@@ -1,8 +1,8 @@
-import { check, fromDecimals, toBN } from '@mystikonetwork/utils';
+import {check, fromDecimals, toBN} from '@mystikonetwork/utils';
 import BN from 'bn.js';
-import { AssetType } from '../common';
-import { RawAssetConfig } from '../raw';
-import { BaseConfig } from './base';
+import {AssetType} from '../common';
+import {RawAssetConfig} from '../raw';
+import {BaseConfig} from './base';
 
 export const MAIN_ASSET_ADDRESS = '0x0000000000000000000000000000000000000000';
 

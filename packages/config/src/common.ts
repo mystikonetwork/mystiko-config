@@ -1,4 +1,4 @@
-import { validate } from 'class-validator';
+import {validate} from 'class-validator';
 
 /**
  * @enum BridgeType

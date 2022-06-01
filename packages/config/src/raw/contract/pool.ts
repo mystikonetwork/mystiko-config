@@ -1,15 +1,7 @@
-import {
-  Equals,
-  IsArray,
-  IsEthereumAddress,
-  IsNotEmpty,
-  IsNumberString,
-  IsOptional,
-  IsString,
-} from 'class-validator';
-import { Expose } from 'class-transformer';
-import { RawContractConfig } from './base';
-import { ContractType } from '../../common';
+import {Expose} from 'class-transformer';
+import {Equals, IsArray, IsEthereumAddress, IsNotEmpty, IsNumberString, IsOptional, IsString,} from 'class-validator';
+import {ContractType} from '../../common';
+import {RawContractConfig} from './base';
 
 export class RawPoolContractConfig extends RawContractConfig {
   @Expose()

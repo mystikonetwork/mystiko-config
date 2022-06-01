@@ -1,5 +1,5 @@
-import { instanceToPlain, instanceToInstance } from 'class-transformer';
-import { RawConfig } from '../raw';
+import {instanceToInstance, instanceToPlain} from 'class-transformer';
+import {RawConfig} from '../raw';
 
 export class BaseConfig<R extends RawConfig, A = {}> {
   protected readonly data: R;
