@@ -1,3 +1,4 @@
+import { Expose, Type } from 'class-transformer';
 import {
   ArrayNotEmpty,
   ArrayUnique,
@@ -11,11 +12,10 @@ import {
   IsUrl,
   ValidateNested,
 } from 'class-validator';
-import { Expose, Type } from 'class-transformer';
 import { RawAssetConfig } from './asset';
+import { RawConfig } from './base';
 import { RawDepositContractConfig, RawPoolContractConfig } from './contract';
 import { RawProviderConfig } from './provider';
-import { RawConfig } from './base';
 
 export const EXPLORER_TX_PLACEHOLDER: string = '%tx%';
 export const EXPLORER_DEFAULT_PREFIX: string = `/tx/${EXPLORER_TX_PLACEHOLDER}`;

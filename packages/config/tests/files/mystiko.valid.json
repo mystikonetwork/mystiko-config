@@ -130,6 +130,10 @@
     {
       "name": "LayerZero Bridge",
       "type": "layerZero"
+    },
+    {
+      "name": "Axelar Network",
+      "type": "axelar"
     }
   ],
   "circuits": [

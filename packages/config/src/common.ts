@@ -13,6 +13,7 @@ export enum BridgeType {
   TBRIDGE = 'tbridge',
   CELER = 'celer',
   LAYER_ZERO = 'layerZero',
+  AXELAR = 'axelar',
 }
 
 /**

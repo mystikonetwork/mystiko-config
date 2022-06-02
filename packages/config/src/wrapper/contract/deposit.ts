@@ -1,11 +1,11 @@
-import BN from 'bn.js';
 import { check, fromDecimals, toBN } from '@mystikonetwork/utils';
-import { AssetConfig, MAIN_ASSET_ADDRESS } from '../asset';
-import { ContractConfig } from './base';
-import { CircuitConfig } from '../circuit';
+import BN from 'bn.js';
 import { AssetType, BridgeType } from '../../common';
-import { PoolContractConfig } from './pool';
 import { RawDepositContractConfig } from '../../raw';
+import { AssetConfig, MAIN_ASSET_ADDRESS } from '../asset';
+import { CircuitConfig } from '../circuit';
+import { ContractConfig } from './base';
+import { PoolContractConfig } from './pool';
 
 type AuxData = {
   poolContractGetter: (address: string) => PoolContractConfig | undefined;

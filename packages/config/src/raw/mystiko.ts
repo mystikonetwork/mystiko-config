@@ -1,6 +1,9 @@
-import { ArrayUnique, IsArray, IsSemVer, ValidateNested } from 'class-validator';
 import { Expose, Type } from 'class-transformer';
+import { ArrayUnique, IsArray, IsSemVer, ValidateNested } from 'class-validator';
+import { BridgeType } from '../common';
+import { RawConfig } from './base';
 import {
+  RawAxelarBridgeConfig,
   RawBridgeConfig,
   RawCelerBridgeConfig,
   RawLayerZeroBridgeConfig,
@@ -9,10 +12,9 @@ import {
 } from './bridge';
 import { RawChainConfig } from './chain';
 import { RawCircuitConfig } from './circuit';
-import { BridgeType } from '../common';
-import { RawConfig } from './base';
 
 export type RawBridgeConfigType =
+  | RawAxelarBridgeConfig
   | RawCelerBridgeConfig
   | RawLayerZeroBridgeConfig
   | RawPolyBridgeConfig
@@ -38,6 +40,7 @@ export class RawMystikoConfig extends RawConfig {
     discriminator: {
       property: 'type',
       subTypes: [
+        { value: RawAxelarBridgeConfig, name: BridgeType.AXELAR },
         { value: RawCelerBridgeConfig, name: BridgeType.CELER },
         { value: RawLayerZeroBridgeConfig, name: BridgeType.LAYER_ZERO },
         { value: RawPolyBridgeConfig, name: BridgeType.POLY },

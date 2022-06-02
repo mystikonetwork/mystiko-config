@@ -1,5 +1,5 @@
-import { IsArray, IsBoolean, IsEnum, IsNotEmpty, IsString } from 'class-validator';
 import { Expose } from 'class-transformer';
+import { IsArray, IsBoolean, IsEnum, IsNotEmpty, IsString } from 'class-validator';
 import { CircuitType } from '../common';
 import { RawConfig } from './base';
 

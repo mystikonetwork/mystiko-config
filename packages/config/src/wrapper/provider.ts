@@ -1,5 +1,5 @@
-import { BaseConfig } from './base';
 import { RawProviderConfig } from '../raw';
+import { BaseConfig } from './base';
 
 export class ProviderConfig extends BaseConfig<RawProviderConfig> {
   public get url(): string {

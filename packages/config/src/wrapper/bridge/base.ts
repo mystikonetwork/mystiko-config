@@ -1,6 +1,6 @@
+import { BridgeType } from '../../common';
 import { RawBridgeConfig } from '../../raw';
 import { BaseConfig } from '../base';
-import { BridgeType } from '../../common';
 
 export class BridgeConfig<T extends RawBridgeConfig, A = {}> extends BaseConfig<T, A> {
   public get name(): string {

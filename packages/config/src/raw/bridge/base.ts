@@ -1,5 +1,5 @@
-import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
 import { Expose } from 'class-transformer';
+import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
 import { BridgeType } from '../../common';
 import { RawConfig } from '../base';
 
