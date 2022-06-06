@@ -1,5 +1,4 @@
 import {
-  BaseConfig,
   BridgeType,
   CircuitType,
   MystikoConfig,
