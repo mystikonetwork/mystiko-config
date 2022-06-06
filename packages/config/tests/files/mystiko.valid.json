@@ -226,5 +226,8 @@
       "provingKeyFile": ["./Transaction2x2.pkey.gz"],
       "verifyingKeyFile": ["./Transaction2x2.vkey.gz"]
     }
-  ]
+  ],
+  "indexer": {
+    "url": "https://example.com"
+  }
 }

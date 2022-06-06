@@ -1,5 +1,5 @@
 import { Expose, Type } from 'class-transformer';
-import { ArrayUnique, IsArray, IsSemVer, ValidateNested } from 'class-validator';
+import { ArrayUnique, IsArray, IsOptional, IsSemVer, ValidateNested } from 'class-validator';
 import { BridgeType } from '../common';
 import { RawConfig } from './base';
 import {
@@ -12,6 +12,7 @@ import {
 } from './bridge';
 import { RawChainConfig } from './chain';
 import { RawCircuitConfig } from './circuit';
+import { RawIndexerConfig } from './indexer';
 
 export type RawBridgeConfigType =
   | RawAxelarBridgeConfig
@@ -57,4 +58,10 @@ export class RawMystikoConfig extends RawConfig {
   @IsArray()
   @ArrayUnique((conf) => conf.name)
   public circuits: RawCircuitConfig[] = [];
+
+  @Expose()
+  @Type(() => RawIndexerConfig)
+  @IsOptional()
+  @ValidateNested()
+  public indexer?: RawIndexerConfig = undefined;
 }
