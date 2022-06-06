@@ -90,6 +90,10 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
     return this.data.eventFilterSize;
   }
 
+  public get indexerFilterSize(): number {
+    return this.data.indexerFilterSize;
+  }
+
   public get poolContracts(): PoolContractConfig[] {
     return Array.from(this.poolContractConfigs.values());
   }
@@ -196,6 +200,14 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
       return depositContractConfig.eventFilterSize || this.eventFilterSize;
     }
     return this.getPoolContractByAddress(address)?.eventFilterSize || this.eventFilterSize;
+  }
+
+  public getIndexerFilterSizeByAddress(address: string): number {
+    const depositContractConfig = this.depositContractConfigs.get(address);
+    if (depositContractConfig) {
+      return depositContractConfig.indexerFilterSize || this.indexerFilterSize;
+    }
+    return this.getPoolContractByAddress(address)?.indexerFilterSize || this.indexerFilterSize;
   }
 
   public getAssetConfigByAddress(assetAddress: string): AssetConfig | undefined {

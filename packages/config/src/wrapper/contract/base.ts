@@ -27,6 +27,10 @@ export class ContractConfig<T extends RawContractConfig, A = {}> extends BaseCon
     return this.data.eventFilterSize;
   }
 
+  public get indexerFilterSize(): number | undefined {
+    return this.data.indexerFilterSize;
+  }
+
   public mutate(data?: T, auxData?: A): ContractConfig<T, A> {
     return new ContractConfig<T, A>(data || this.data, auxData || this.auxData);
   }

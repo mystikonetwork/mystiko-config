@@ -40,4 +40,10 @@ export class RawContractConfig extends RawConfig {
   @IsPositive()
   @IsOptional()
   public eventFilterSize?: number = undefined;
+
+  @Expose()
+  @IsInt()
+  @IsPositive()
+  @IsOptional()
+  public indexerFilterSize?: number = undefined;
 }

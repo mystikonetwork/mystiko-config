@@ -10,6 +10,7 @@ beforeEach(async () => {
     type: ContractType.DEPOSIT,
     startBlock: 1000000,
     eventFilterSize: 10000,
+    indexerFilterSize: 100000,
   });
 });
 
@@ -48,6 +49,13 @@ test('test invalid eventFilterSize', async () => {
   config.eventFilterSize = 0;
   await expect(config.validate()).rejects.toThrow();
   config.eventFilterSize = 1.2;
+  await expect(config.validate()).rejects.toThrow();
+});
+
+test('test invalid indexerFilterSize', async () => {
+  config.indexerFilterSize = 0;
+  await expect(config.validate()).rejects.toThrow();
+  config.indexerFilterSize = 1.2;
   await expect(config.validate()).rejects.toThrow();
 });
 

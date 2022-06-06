@@ -4,5 +4,6 @@
   "address": "0x123456961f315a836542e603a3df2e0dd9d4ecd06ebc67",
   "type": "deposit",
   "startBlock": 1000000,
-  "eventFilterSize": 10000
+  "eventFilterSize": 10000,
+  "indexerFilterSize": 100000
 }

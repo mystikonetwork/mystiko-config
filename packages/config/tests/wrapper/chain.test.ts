@@ -53,6 +53,7 @@ test('test equality', () => {
   expect(config.explorerPrefix).toBe(rawConfig.explorerPrefix);
   expect(config.signerEndpoint).toBe(rawConfig.signerEndpoint);
   expect(config.eventFilterSize).toBe(rawConfig.eventFilterSize);
+  expect(config.indexerFilterSize).toBe(rawConfig.indexerFilterSize);
   expect(config.providers).toStrictEqual(rawConfig.providers.map((raw) => new ProviderConfig(raw)));
   expect(config.poolContracts.length).toBe(rawConfig.poolContracts.length);
   expect(config.poolContracts.map((conf) => conf.address).sort()).toStrictEqual(
@@ -382,6 +383,22 @@ test('test getEventFilterSizeByAddress', () => {
   rawConfig.poolContracts[0].eventFilterSize = 987654321;
   expect(config.getEventFilterSizeByAddress('0x961f315a836542e603a3df2e0dd9d4ecd06ebc67')).toBe(87654321);
   expect(config.getEventFilterSizeByAddress('0xF55Dbe8D71Df9Bbf5841052C75c6Ea9eA717fc6d')).toBe(987654321);
+});
+
+test('test getIndexerFilterSizeByAddress', () => {
+  rawConfig.indexerFilterSize = 123450;
+  config = new ChainConfig(rawConfig, {
+    defaultCircuitConfigs,
+    circuitConfigsByName,
+    depositContractGetter: () => undefined,
+  });
+  expect(config.getIndexerFilterSizeByAddress('0x5380442d3c4ec4f5777f551f5edd2fa0f691a27c')).toBe(123450);
+  expect(config.getIndexerFilterSizeByAddress('0x961f315a836542e603a3df2e0dd9d4ecd06ebc67')).toBe(123450);
+  expect(config.getIndexerFilterSizeByAddress('0xF55Dbe8D71Df9Bbf5841052C75c6Ea9eA717fc6d')).toBe(123450);
+  rawConfig.depositContracts[0].indexerFilterSize = 876543210;
+  rawConfig.poolContracts[0].indexerFilterSize = 9876543210;
+  expect(config.getIndexerFilterSizeByAddress('0x961f315a836542e603a3df2e0dd9d4ecd06ebc67')).toBe(876543210);
+  expect(config.getIndexerFilterSizeByAddress('0xF55Dbe8D71Df9Bbf5841052C75c6Ea9eA717fc6d')).toBe(9876543210);
 });
 
 test('test invalid poolAddress', () => {

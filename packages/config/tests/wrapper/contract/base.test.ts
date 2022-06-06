@@ -15,6 +15,7 @@ test('test equality', () => {
   expect(config.type).toBe(rawConfig.type);
   expect(config.startBlock).toBe(rawConfig.startBlock);
   expect(config.eventFilterSize).toBe(rawConfig.eventFilterSize);
+  expect(config.indexerFilterSize).toBe(rawConfig.indexerFilterSize);
 });
 
 test('test copy', () => {

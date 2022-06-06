@@ -1,10 +1,11 @@
 import {
+  BaseConfig,
   BridgeType,
   CircuitType,
   MystikoConfig,
   RawChainConfig,
   RawCircuitConfig,
-  RawConfig,
+  RawConfig, RawIndexerConfig,
   RawMystikoConfig,
   RawTBridgeConfig,
 } from '../../src';
@@ -22,6 +23,7 @@ test('test equality', () => {
   expect(config.chains.map((conf) => conf.copyData()).sort()).toStrictEqual(rawConfig.chains.sort());
   expect(config.circuits.map((conf) => conf.copyData()).sort()).toStrictEqual(rawConfig.circuits.sort());
   expect(config.bridges.map((conf) => conf.copyData()).sort()).toStrictEqual(rawConfig.bridges.sort());
+  expect(config.indexer).toBe(undefined);
 });
 
 test('test getChainConfig', () => {
@@ -291,6 +293,12 @@ test('test getTransactionUrl', () => {
   ).toBe(
     'https://ropsten.etherscan.io/tx/0xbce8d733536ee3b769456cf91bebae1e9e5be6cb89bb7490c6225384e1bc5e3e',
   );
+});
+
+test('test get indexer config', async () => {
+  rawConfig.indexer = await RawConfig.createFromFile(RawIndexerConfig, 'tests/files/indexer.valid.json');
+  config = await MystikoConfig.createFromRaw(rawConfig);
+  expect(config.indexer?.url).toBe('https://example.com');
 });
 
 test('test mutate', () => {
