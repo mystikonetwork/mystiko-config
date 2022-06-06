@@ -21,6 +21,7 @@ import {
 import { ChainConfig } from './chain';
 import { CircuitConfig } from './circuit';
 import { DepositContractConfig, PoolContractConfig } from './contract';
+import { IndexerConfig } from './indexer';
 
 export type BridgeConfigType =
   | AxelarBridgeConfig
@@ -38,6 +39,8 @@ export class MystikoConfig extends BaseConfig<RawMystikoConfig> {
 
   private readonly chainConfigs: Map<number, ChainConfig>;
 
+  private readonly indexerConfig: IndexerConfig | undefined;
+
   protected constructor(data: RawMystikoConfig) {
     super(data);
     const { defaultCircuitConfigs, circuitConfigsByName } = this.initCircuitConfigs();
@@ -45,6 +48,7 @@ export class MystikoConfig extends BaseConfig<RawMystikoConfig> {
     this.circuitConfigsByName = circuitConfigsByName;
     this.bridgeConfigs = this.initBridgeConfigs();
     this.chainConfigs = this.initChainConfigs(defaultCircuitConfigs, circuitConfigsByName);
+    this.indexerConfig = data.indexer ? new IndexerConfig(data.indexer) : undefined;
     this.validate();
   }
 
@@ -62,6 +66,10 @@ export class MystikoConfig extends BaseConfig<RawMystikoConfig> {
 
   public get chains(): ChainConfig[] {
     return Array.from(this.chainConfigs.values());
+  }
+
+  public get indexer(): IndexerConfig | undefined {
+    return this.indexerConfig;
   }
 
   public getChainConfig(chainId: number): ChainConfig | undefined {

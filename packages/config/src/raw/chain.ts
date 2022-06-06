@@ -72,6 +72,11 @@ export class RawChainConfig extends RawConfig {
   public eventFilterSize: number = 200000;
 
   @Expose()
+  @IsInt()
+  @IsPositive()
+  public indexerFilterSize: number = 2000000;
+
+  @Expose()
   @Type(() => RawDepositContractConfig)
   @ValidateNested()
   @IsArray()
