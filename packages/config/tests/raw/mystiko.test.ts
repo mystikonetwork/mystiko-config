@@ -40,6 +40,16 @@ test('test invalid circuits', async () => {
   await expect(config.validate()).rejects.toThrow();
 });
 
+test('test invalid indexer', async () => {
+  const indexerConfig = config.indexer;
+  if (indexerConfig) {
+    indexerConfig.url = 'not a url';
+    await expect(config.validate()).rejects.toThrow();
+  } else {
+    throw new Error('indexer config should not be undefined');
+  }
+});
+
 test('test invalid json file', async () => {
   await expect(
     RawConfig.createFromFile(RawMystikoConfig, 'tests/files/mystiko.invalid.json'),

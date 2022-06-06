@@ -2656,5 +2656,8 @@
         "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/6a500da/Rollup16.vkey.gz"
       ]
     }
-  ]
+  ],
+  "indexer": {
+    "url": "https://indexer.zksquare.mystiko.network"
+  }
 }
