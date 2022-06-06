@@ -5,7 +5,8 @@ import {
   MystikoConfig,
   RawChainConfig,
   RawCircuitConfig,
-  RawConfig, RawIndexerConfig,
+  RawConfig,
+  RawIndexerConfig,
   RawMystikoConfig,
   RawTBridgeConfig,
 } from '../../src';
