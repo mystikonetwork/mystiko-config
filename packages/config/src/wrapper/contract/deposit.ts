@@ -99,10 +99,16 @@ export class DepositContractConfig extends ContractConfig<RawDepositContractConf
   }
 
   public get minRollupFee(): BN {
+    if (this.peerContract) {
+      return this.peerContract.poolContract.minRollupFee;
+    }
     return this.poolContract.minRollupFee;
   }
 
   public get minRollupFeeNumber(): number {
+    if (this.peerContract) {
+      return this.peerContract.poolContract.minRollupFeeNumber;
+    }
     return this.poolContract.minRollupFeeNumber;
   }
 

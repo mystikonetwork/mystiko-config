@@ -131,8 +131,18 @@ test('test executorFeeAsset', () => {
 });
 
 test('test peerContract', () => {
+  const rawAssetConfig = rawMystikoConfig.chains[1].assets[0];
+  const peerAssetsConfig = new Map<string, AssetConfig>([
+    [rawMystikoConfig.chains[1].assets[0].assetAddress, new AssetConfig(rawAssetConfig)],
+  ]);
   const peerContractConfig = new DepositContractConfig(rawMystikoConfig.chains[1].depositContracts[0], {
-    poolContractGetter: () => undefined,
+    poolContractGetter: () =>
+      new PoolContractConfig(rawMystikoConfig.chains[1].poolContracts[0], {
+        defaultCircuitConfigs,
+        circuitConfigsByName,
+        mainAssetConfig,
+        assetConfigs: peerAssetsConfig,
+      }),
     depositContractGetter: () => undefined,
     mainAssetConfig,
     assetConfigs,
@@ -147,6 +157,8 @@ test('test peerContract', () => {
     assetConfigs,
   });
   expect(config.peerContract?.address).toBe('0xd791049D0a154bC7860804e1A18ACD148Eb0afD9');
+  expect(config.minRollupFee.toString()).toBe('12345');
+  expect(config.minRollupFeeNumber).toBe(1.2345e-12);
 });
 
 test('test invalid rawConfig', () => {
