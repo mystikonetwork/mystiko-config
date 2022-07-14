@@ -71,5 +71,5 @@ export class RawDepositContractConfig extends RawContractConfig {
   @Expose()
   @IsInt()
   @IsPositive()
-  public serviceFeeBase: number = 1000000;
+  public serviceFeeDivider: number = 1000000;
 }

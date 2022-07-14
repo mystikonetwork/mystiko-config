@@ -15,5 +15,5 @@
   "bridgeFeeAssetAddress": "0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a",
   "executorFeeAssetAddress": "0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a",
   "serviceFee": 2,
-  "serviceFeeBase": 1000
+  "serviceFeeDivider": 1000
 }

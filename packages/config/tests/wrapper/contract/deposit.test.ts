@@ -95,7 +95,7 @@ test('test equality', () => {
     assetConfigs.get('0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a'),
   );
   expect(config.serviceFee).toBe(2);
-  expect(config.serviceFeeBase).toBe(1000);
+  expect(config.serviceFeeDivider).toBe(1000);
 });
 
 test('test bridgeFeeAsset', () => {

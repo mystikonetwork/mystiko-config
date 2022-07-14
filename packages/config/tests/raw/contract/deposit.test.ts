@@ -19,7 +19,7 @@ beforeEach(async () => {
     bridgeFeeAssetAddress: '0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a',
     executorFeeAssetAddress: '0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a',
     serviceFee: 2,
-    serviceFeeBase: 1000,
+    serviceFeeDivider: 1000,
   });
 });
 
@@ -103,10 +103,10 @@ test('test invalid serviceFee', async () => {
   await expect(config.validate()).rejects.toThrow();
 });
 
-test('test invalid serviceFeeBase', async () => {
-  config.serviceFeeBase = 1.01;
+test('test invalid serviceFeeDivider', async () => {
+  config.serviceFeeDivider = 1.01;
   await expect(config.validate()).rejects.toThrow();
-  config.serviceFeeBase = 0;
+  config.serviceFeeDivider = 0;
   await expect(config.validate()).rejects.toThrow();
 });
 
