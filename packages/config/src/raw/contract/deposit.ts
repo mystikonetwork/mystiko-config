@@ -8,6 +8,7 @@ import {
   IsNumberString,
   IsOptional,
   IsPositive,
+  Min,
 } from 'class-validator';
 import { BridgeType, ContractType } from '../../common';
 import { RawContractConfig } from './base';
@@ -61,4 +62,14 @@ export class RawDepositContractConfig extends RawContractConfig {
   @IsOptional()
   @IsEthereumAddress()
   public executorFeeAssetAddress?: string;
+
+  @Expose()
+  @IsInt()
+  @Min(0)
+  public serviceFee: number = 1000;
+
+  @Expose()
+  @IsInt()
+  @IsPositive()
+  public serviceFeeBase: number = 1000000;
 }

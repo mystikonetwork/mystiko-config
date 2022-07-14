@@ -13,5 +13,7 @@
   "minBridgeFee": "20000000000000000",
   "minExecutorFee": "30000000000000000",
   "bridgeFeeAssetAddress": "0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a",
-  "executorFeeAssetAddress": "0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a"
+  "executorFeeAssetAddress": "0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a",
+  "serviceFee": 2,
+  "serviceFeeBase": 1000
 }
