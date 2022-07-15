@@ -139,6 +139,14 @@ export class DepositContractConfig extends ContractConfig<RawDepositContractConf
     return this.executorFeeAssetConfig || this.asset;
   }
 
+  public get serviceFee(): number {
+    return this.data.serviceFee;
+  }
+
+  public get serviceFeeDivider(): number {
+    return this.data.serviceFeeDivider;
+  }
+
   public mutate(data?: RawDepositContractConfig, auxData?: AuxData): DepositContractConfig {
     return new DepositContractConfig(data || this.data, auxData || this.auxData);
   }

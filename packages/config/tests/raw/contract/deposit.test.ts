@@ -18,6 +18,8 @@ beforeEach(async () => {
     minExecutorFee: '30000000000000000',
     bridgeFeeAssetAddress: '0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a',
     executorFeeAssetAddress: '0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a',
+    serviceFee: 2,
+    serviceFeeDivider: 1000,
   });
 });
 
@@ -91,6 +93,20 @@ test('test invalid executorFeeAssetAddress', async () => {
   config.bridgeFeeAssetAddress = '0xdeadbeef';
   await expect(config.validate()).rejects.toThrow();
   config.bridgeFeeAssetAddress = '';
+  await expect(config.validate()).rejects.toThrow();
+});
+
+test('test invalid serviceFee', async () => {
+  config.serviceFee = 1.01;
+  await expect(config.validate()).rejects.toThrow();
+  config.serviceFee = -1;
+  await expect(config.validate()).rejects.toThrow();
+});
+
+test('test invalid serviceFeeDivider', async () => {
+  config.serviceFeeDivider = 1.01;
+  await expect(config.validate()).rejects.toThrow();
+  config.serviceFeeDivider = 0;
   await expect(config.validate()).rejects.toThrow();
 });
 
