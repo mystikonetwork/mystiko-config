@@ -105,6 +105,18 @@
       ],
       "poolContracts": [
         {
+          "version": 1,
+          "name": "CommitmentPool",
+          "poolName": "PreA Pool(since 06/20/2022)",
+          "bridgeType": "tbridge",
+          "address": "0x9b42ec45f6fb6c7d252c66741e960585888de7b6",
+          "type": "pool",
+          "startBlock": 1000000,
+          "assetAddress": "0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a",
+          "minRollupFee": "40000000000000000",
+          "circuits": ["zokrates-2.0-rollup1"]
+        },
+        {
           "version": 2,
           "name": "CommitmentPool",
           "poolName": "A Pool(since 07/20/2022)",

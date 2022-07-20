@@ -17,11 +17,9 @@ type AuxData = {
 export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
   private readonly poolContractConfigs: Map<string, PoolContractConfig>;
 
-  private readonly poolConfigsByAssetAndBridge: Map<string, Map<BridgeType, PoolContractConfig>>;
+  private readonly poolConfigsByAssetAndBridge: Map<string, Map<BridgeType, Map<number, PoolContractConfig>>>;
 
   private readonly depositContractConfigs: Map<string, DepositContractConfig>;
-
-  private readonly depositConfigsByPoolContract: Map<string, DepositContractConfig[]>;
 
   private readonly mainAssetConfig: AssetConfig;
 
@@ -42,7 +40,6 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
       this.auxDataNotEmpty.depositContractGetter,
     );
     this.poolConfigsByAssetAndBridge = this.initPoolConfigsByAssetAndBridge();
-    this.depositConfigsByPoolContract = this.initDepositConfigsByPoolContract();
     this.providerConfigs = this.data.providers.map((raw) => new ProviderConfig(raw));
   }
 
@@ -173,8 +170,17 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
     return undefined;
   }
 
-  public getPoolContract(assetSymbol: string, bridgeType: BridgeType): PoolContractConfig | undefined {
-    return this.poolConfigsByAssetAndBridge.get(assetSymbol)?.get(bridgeType);
+  public getPoolContract(
+    assetSymbol: string,
+    bridgeType: BridgeType,
+    version: number,
+  ): PoolContractConfig | undefined {
+    return this.poolConfigsByAssetAndBridge.get(assetSymbol)?.get(bridgeType)?.get(version);
+  }
+
+  public getPoolContracts(assetSymbol: string, bridgeType: BridgeType): PoolContractConfig[] {
+    const allVersions = this.poolConfigsByAssetAndBridge.get(assetSymbol)?.get(bridgeType);
+    return allVersions ? Array.from(allVersions.values()) : [];
   }
 
   public getDepositContractByAddress(address: string): DepositContractConfig | undefined {
@@ -278,44 +284,23 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
     return depositContractConfigs;
   }
 
-  private initPoolConfigsByAssetAndBridge(): Map<string, Map<BridgeType, PoolContractConfig>> {
-    const poolConfigsByAssetAndBridge = new Map<string, Map<BridgeType, PoolContractConfig>>();
-    this.depositContracts.forEach((depositContractConfig) => {
-      const bridges: Map<BridgeType, PoolContractConfig> =
-        poolConfigsByAssetAndBridge.get(depositContractConfig.assetSymbol) ||
-        new Map<BridgeType, PoolContractConfig>();
-      const previousDepositContractConfig = bridges.get(depositContractConfig.bridgeType);
-      if (previousDepositContractConfig) {
-        check(
-          previousDepositContractConfig.address === depositContractConfig.poolAddress,
-          `only one pool address allowed for asset ${depositContractConfig.assetSymbol} ` +
-            `and bridge type ${depositContractConfig.bridgeType}`,
-        );
-      } else {
-        bridges.set(depositContractConfig.bridgeType, depositContractConfig.poolContract);
-      }
-      poolConfigsByAssetAndBridge.set(depositContractConfig.assetSymbol, bridges);
+  private initPoolConfigsByAssetAndBridge(): Map<string, Map<BridgeType, Map<number, PoolContractConfig>>> {
+    const poolConfigsByAssetAndBridge = new Map<string, Map<BridgeType, Map<number, PoolContractConfig>>>();
+    this.poolContracts.forEach((poolContractConfig) => {
+      const bridges: Map<BridgeType, Map<number, PoolContractConfig>> = poolConfigsByAssetAndBridge.get(
+        poolContractConfig.assetSymbol,
+      ) || new Map<BridgeType, Map<number, PoolContractConfig>>();
+      const allVersions = bridges.get(poolContractConfig.bridgeType) || new Map<number, PoolContractConfig>();
+      check(
+        !allVersions.has(poolContractConfig.version),
+        `only one pool address allowed for asset ${poolContractConfig.assetSymbol} ` +
+          `and bridge type ${poolContractConfig.bridgeType} and version ${poolContractConfig.version}`,
+      );
+      allVersions.set(poolContractConfig.version, poolContractConfig);
+      bridges.set(poolContractConfig.bridgeType, allVersions);
+      poolConfigsByAssetAndBridge.set(poolContractConfig.assetSymbol, bridges);
     });
     return poolConfigsByAssetAndBridge;
-  }
-
-  private initDepositConfigsByPoolContract(): Map<string, DepositContractConfig[]> {
-    const depositConfigsByPoolContract = new Map<string, DepositContractConfig[]>();
-    this.depositContractConfigs.forEach((depositContractConfig) => {
-      const depositContracts = depositConfigsByPoolContract.get(depositContractConfig.poolAddress);
-      if (depositContracts) {
-        const lastDepositContractConfig = depositContracts[depositContracts.length - 1];
-        check(
-          lastDepositContractConfig.bridgeType === depositContractConfig.bridgeType,
-          'deposit contract with different bridge type ' +
-            `cannot share same pool address=${depositContractConfig.poolAddress}`,
-        );
-        depositContracts.push(depositContractConfig);
-      } else {
-        depositConfigsByPoolContract.set(depositContractConfig.poolAddress, [depositContractConfig]);
-      }
-    });
-    return depositConfigsByPoolContract;
   }
 
   private initMainAssetConfig(): AssetConfig {

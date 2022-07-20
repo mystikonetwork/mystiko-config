@@ -341,7 +341,19 @@ test('test getPoolContract', async () => {
     minBridgeFee: '20000000000000000',
     minExecutorFee: '30000000000000000',
   });
-  const poolContractConfig = await RawConfig.createFromObject(RawPoolContractConfig, {
+  const poolContractConfig1 = await RawConfig.createFromObject(RawPoolContractConfig, {
+    version: 1,
+    name: 'CommitmentPool',
+    poolName: 'A Pool',
+    bridgeType: BridgeType.LOOP,
+    address: '0x81b7e08f65bdf5648606c89998a9cc8164397647',
+    startBlock: 1000000,
+    assetType: AssetType.MAIN,
+    assetSymbol: 'ETH',
+    assetDecimals: 16,
+    minRollupFee: '40000000000000000',
+  });
+  const poolContractConfig2 = await RawConfig.createFromObject(RawPoolContractConfig, {
     version: 2,
     name: 'CommitmentPool',
     poolName: 'A Pool',
@@ -353,7 +365,8 @@ test('test getPoolContract', async () => {
     assetDecimals: 16,
     minRollupFee: '40000000000000000',
   });
-  rawConfig.poolContracts.push(poolContractConfig);
+  rawConfig.poolContracts.push(poolContractConfig1);
+  rawConfig.poolContracts.push(poolContractConfig2);
   rawConfig.depositContracts.push(tbridgeDepositContractConfig);
   rawConfig.depositContracts.push(loopDepositContractConfig);
   rawConfig.depositContracts[0].disabled = false;
@@ -362,14 +375,24 @@ test('test getPoolContract', async () => {
     circuitConfigsByName,
     depositContractGetter: () => undefined,
   });
-  expect(config.getPoolContract('MTT', BridgeType.TBRIDGE)?.address).toBe(
+  expect(config.getPoolContract('MTT', BridgeType.TBRIDGE, 2)?.address).toBe(
     '0xF55Dbe8D71Df9Bbf5841052C75c6Ea9eA717fc6d',
   );
-  expect(config.getPoolContract('mUSD', BridgeType.TBRIDGE)?.address).toBe(undefined);
-  expect(config.getPoolContract('MTT', BridgeType.LOOP)).toBe(undefined);
-  expect(config.getPoolContract('ETH', BridgeType.LOOP)?.address).toBe(
+  expect(config.getPoolContract('MTT', BridgeType.TBRIDGE, 3)?.address).toBe(undefined);
+  expect(config.getPoolContract('mUSD', BridgeType.TBRIDGE, 2)?.address).toBe(undefined);
+  expect(config.getPoolContract('MTT', BridgeType.LOOP, 2)).toBe(undefined);
+  expect(config.getPoolContract('ETH', BridgeType.LOOP, 1)?.address).toBe(
+    '0x81b7e08f65bdf5648606c89998a9cc8164397647',
+  );
+  expect(config.getPoolContract('ETH', BridgeType.LOOP, 2)?.address).toBe(
     '0x954c6c78A2F93E6E19Ff1DE538F720311414530c',
   );
+  expect(config.getPoolContracts('mUSD', BridgeType.TBRIDGE)).toStrictEqual([]);
+  expect(config.getPoolContracts('MTT', BridgeType.LOOP)).toStrictEqual([]);
+  expect(config.getPoolContracts('ETH', BridgeType.LOOP).map((c) => c.address)).toStrictEqual([
+    '0x81b7e08f65bdf5648606c89998a9cc8164397647',
+    '0x954c6c78A2F93E6E19Ff1DE538F720311414530c',
+  ]);
   expect(config.getPoolContractByAddress('0x954c6c78A2F93E6E19Ff1DE538F720311414530c')?.assetSymbol).toBe(
     'ETH',
   );
@@ -484,7 +507,11 @@ test('test duplicate bridge and asset', async () => {
         circuitConfigsByName,
         depositContractGetter: () => undefined,
       }),
-  ).toThrow(new Error(`only one pool address allowed for asset MTT and bridge type ${BridgeType.TBRIDGE}`));
+  ).toThrow(
+    new Error(
+      `only one pool address allowed for asset MTT and bridge type ${BridgeType.TBRIDGE} and version 2`,
+    ),
+  );
 });
 
 test('test different bridge with same pool address', async () => {
