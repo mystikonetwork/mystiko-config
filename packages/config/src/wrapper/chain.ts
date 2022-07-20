@@ -185,13 +185,8 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
     return this.poolContractConfigs.get(address);
   }
 
-  public getPoolContractLinkedDepositContracts(address: string): DepositContractConfig[] {
-    return this.depositConfigsByPoolContract.get(address) || [];
-  }
-
   public getPoolContractBridgeType(address: string): BridgeType | undefined {
-    const depositConfigs = this.getPoolContractLinkedDepositContracts(address);
-    return depositConfigs.length > 0 ? depositConfigs[0].bridgeType : undefined;
+    return this.getPoolContractByAddress(address)?.bridgeType;
   }
 
   public getEventFilterSizeByAddress(address: string): number {
@@ -255,9 +250,14 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
         !depositContractConfigs.has(raw.address),
         `duplicate deposit contract=${raw.address} definition in configuration`,
       );
+      const poolContractConfig = poolContractConfigs.get(raw.poolAddress);
+      if (!poolContractConfig) {
+        throw new Error(`deposit contract=${raw.address} poolAddress definition does not exist`);
+      }
       check(
-        poolContractConfigs.has(raw.poolAddress),
-        `deposit contract=${raw.address} poolAddress definition does not exist`,
+        raw.bridgeType === poolContractConfig.bridgeType,
+        `deposit contract=${raw.address} bridgeType=${raw.bridgeType} ` +
+          `does not equal to pool contract bridgeType=${poolContractConfig.bridgeType}`,
       );
       if (raw.bridgeType !== BridgeType.LOOP) {
         check(

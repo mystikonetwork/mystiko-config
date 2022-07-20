@@ -90,6 +90,8 @@ test('test peerChainIds', async () => {
   const poolContractConfig = await RawConfig.createFromObject(RawPoolContractConfig, {
     version: 2,
     name: 'CommitmentPool',
+    poolName: 'A Pool',
+    bridgeType: BridgeType.LOOP,
     address: '0x20Eb345870059E688c59e89523442ade33C7c813',
     startBlock: 1000000,
     assetType: AssetType.ERC20,
@@ -120,6 +122,8 @@ test('test getAssetSymbols', async () => {
   const poolContractConfig1 = await RawConfig.createFromObject(RawPoolContractConfig, {
     version: 2,
     name: 'CommitmentPool',
+    poolName: 'A Pool',
+    bridgeType: BridgeType.LOOP,
     address: '0x954c6c78A2F93E6E19Ff1DE538F720311414530c',
     startBlock: 1000000,
     assetType: AssetType.MAIN,
@@ -130,6 +134,8 @@ test('test getAssetSymbols', async () => {
   const poolContractConfig2 = await RawConfig.createFromObject(RawPoolContractConfig, {
     version: 2,
     name: 'CommitmentPool',
+    poolName: 'A Pool',
+    bridgeType: BridgeType.TBRIDGE,
     address: '0x20Eb345870059E688c59e89523442ade33C7c813',
     startBlock: 1000000,
     assetType: AssetType.MAIN,
@@ -197,6 +203,8 @@ test('test getBridges', async () => {
   const poolContractConfig1 = await RawConfig.createFromObject(RawPoolContractConfig, {
     version: 2,
     name: 'CommitmentPool',
+    poolName: 'A Pool',
+    bridgeType: BridgeType.LOOP,
     address: '0x6b8a4ea37c72f1992626eb9bd48d4aa6aa077c47',
     startBlock: 1000000,
     assetType: AssetType.ERC20,
@@ -229,6 +237,8 @@ test('test getBridges', async () => {
   const poolContractConfig2 = await RawConfig.createFromObject(RawPoolContractConfig, {
     version: 2,
     name: 'CommitmentPool',
+    poolName: 'A Pool',
+    bridgeType: BridgeType.CELER,
     address: '0x20Eb345870059E688c59e89523442ade33C7c813',
     startBlock: 1000000,
     assetType: AssetType.ERC20,
@@ -276,6 +286,8 @@ test('test getDepositContract', async () => {
   const poolContractConfig = await RawConfig.createFromObject(RawPoolContractConfig, {
     version: 2,
     name: 'CommitmentPool',
+    poolName: 'A Pool',
+    bridgeType: BridgeType.LOOP,
     address: '0x20Eb345870059E688c59e89523442ade33C7c813',
     startBlock: 1000000,
     assetType: AssetType.ERC20,
@@ -332,6 +344,8 @@ test('test getPoolContract', async () => {
   const poolContractConfig = await RawConfig.createFromObject(RawPoolContractConfig, {
     version: 2,
     name: 'CommitmentPool',
+    poolName: 'A Pool',
+    bridgeType: BridgeType.LOOP,
     address: '0x954c6c78A2F93E6E19Ff1DE538F720311414530c',
     startBlock: 1000000,
     assetType: AssetType.MAIN,
@@ -437,6 +451,8 @@ test('test duplicate bridge and asset', async () => {
   const poolContractConfig = await RawConfig.createFromObject(RawPoolContractConfig, {
     version: 2,
     name: 'CommitmentPool',
+    bridgeType: BridgeType.TBRIDGE,
+    poolName: 'A Pool',
     address: '0x954c6c78A2F93E6E19Ff1DE538F720311414530c',
     startBlock: 1000000,
     assetType: AssetType.ERC20,
@@ -501,8 +517,8 @@ test('test different bridge with same pool address', async () => {
       }),
   ).toThrow(
     new Error(
-      'deposit contract with different bridge type ' +
-        'cannot share same pool address=0xF55Dbe8D71Df9Bbf5841052C75c6Ea9eA717fc6d',
+      'deposit contract=0x2f0Fe3154C281Cb25D6a615bf524230e57A462e1 ' +
+        'bridgeType=loop does not equal to pool contract bridgeType=tbridge',
     ),
   );
 });

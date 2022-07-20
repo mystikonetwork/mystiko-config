@@ -248,6 +248,7 @@ test('test invalid peerChainAddress', async () => {
 
 test('test bridgeType mismatch', async () => {
   rawConfig.chains[0].depositContracts[2].bridgeType = BridgeType.POLY;
+  rawConfig.chains[0].poolContracts[1].bridgeType = BridgeType.POLY;
   await expect(MystikoConfig.createFromRaw(rawConfig)).rejects.toThrow(
     new Error(
       'bridge type mismatch for chain id=97 address=0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D ' +

@@ -46,6 +46,8 @@ function initPoolContractConfig(): Promise<RawPoolContractConfig> {
   return RawConfig.createFromObject(RawPoolContractConfig, {
     version: 2,
     name: 'CommitmentPool',
+    poolName: 'A Pool(since 07/20/2022)',
+    bridgeType: BridgeType.TBRIDGE,
     address: '0xF55Dbe8D71Df9Bbf5841052C75c6Ea9eA717fc6d',
     type: ContractType.POOL,
     startBlock: 1000000,
