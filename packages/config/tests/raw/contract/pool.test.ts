@@ -1,4 +1,4 @@
-import { ContractType, RawConfig, RawPoolContractConfig } from '../../../src';
+import { BridgeType, ContractType, RawConfig, RawPoolContractConfig } from '../../../src';
 
 let config: RawPoolContractConfig;
 
@@ -6,6 +6,8 @@ beforeEach(async () => {
   config = await RawConfig.createFromObject(RawPoolContractConfig, {
     version: 2,
     name: 'CommitmentPool',
+    poolName: 'A Pool(since 07/20/2022)',
+    bridgeType: BridgeType.TBRIDGE,
     address: '0x961f315a836542e603a3df2e0dd9d4ecd06ebc67',
     startBlock: 1000000,
     assetAddress: '0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a',
@@ -19,6 +21,11 @@ test('test validate success', async () => {
   config.minRollupFee = '0';
   config.circuits = [];
   await config.validate();
+});
+
+test('test invalid poolName', async () => {
+  config.poolName = '';
+  await expect(config.validate()).rejects.toThrow();
 });
 
 test('test invalid type', async () => {

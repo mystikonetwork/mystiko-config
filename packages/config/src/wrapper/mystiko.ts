@@ -128,8 +128,17 @@ export class MystikoConfig extends BaseConfig<RawMystikoConfig> {
     chainId: number,
     assetSymbol: string,
     bridgeType: BridgeType,
+    version: number,
   ): PoolContractConfig | undefined {
-    return this.getChainConfig(chainId)?.getPoolContract(assetSymbol, bridgeType);
+    return this.getChainConfig(chainId)?.getPoolContract(assetSymbol, bridgeType, version);
+  }
+
+  public getPoolContractConfigs(
+    chainId: number,
+    assetSymbol: string,
+    bridgeType: BridgeType,
+  ): PoolContractConfig[] {
+    return this.getChainConfig(chainId)?.getPoolContracts(assetSymbol, bridgeType) || [];
   }
 
   public getPoolContractConfigByAddress(chainId: number, address: string): PoolContractConfig | undefined {

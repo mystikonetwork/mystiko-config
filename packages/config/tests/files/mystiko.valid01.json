@@ -105,8 +105,22 @@
       ],
       "poolContracts": [
         {
+          "version": 1,
+          "name": "CommitmentPool",
+          "poolName": "PreA Pool(since 06/20/2022)",
+          "bridgeType": "tbridge",
+          "address": "0x9b42ec45f6fb6c7d252c66741e960585888de7b6",
+          "type": "pool",
+          "startBlock": 1000000,
+          "assetAddress": "0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a",
+          "minRollupFee": "40000000000000000",
+          "circuits": ["zokrates-2.0-rollup1"]
+        },
+        {
           "version": 2,
           "name": "CommitmentPool",
+          "poolName": "A Pool(since 07/20/2022)",
+          "bridgeType": "tbridge",
           "address": "0xF55Dbe8D71Df9Bbf5841052C75c6Ea9eA717fc6d",
           "type": "pool",
           "startBlock": 1000000,
@@ -117,6 +131,8 @@
         {
           "version": 2,
           "name": "CommitmentPool",
+          "poolName": "A Pool(since 07/20/2022)",
+          "bridgeType": "celer",
           "address": "0x20Eb345870059E688c59e89523442ade33C7c813",
           "type": "pool",
           "startBlock": 1000000,
@@ -127,6 +143,8 @@
         {
           "version": 2,
           "name": "CommitmentPool",
+          "poolName": "A Pool(since 07/20/2022)",
+          "bridgeType": "layerZero",
           "address": "0xB12713BfA9d1DE339ca14B01F8F14f092ffE75bf",
           "type": "pool",
           "startBlock": 1000000,
@@ -137,6 +155,8 @@
         {
           "version": 2,
           "name": "CommitmentPool",
+          "poolName": "A Pool(since 07/20/2022)",
+          "bridgeType": "loop",
           "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
           "type": "pool",
           "startBlock": 1000000,
@@ -145,6 +165,8 @@
         {
           "version": 2,
           "name": "CommitmentPool",
+          "poolName": "A Pool(since 07/20/2022)",
+          "bridgeType": "axelar",
           "address": "0x634de5D380Cb271d743b9C6a23C3E1824c4B70Bd",
           "type": "pool",
           "startBlock": 1000000,
@@ -255,6 +277,8 @@
         {
           "version": 2,
           "name": "CommitmentPool",
+          "poolName": "A Pool(since 07/20/2022)",
+          "bridgeType": "tbridge",
           "address": "0xBe2C9c8a00951662dF3a978b25F448968F0595AE",
           "type": "pool",
           "startBlock": 1000000,
@@ -264,6 +288,8 @@
         {
           "version": 2,
           "name": "CommitmentPool",
+          "poolName": "A Pool(since 07/20/2022)",
+          "bridgeType": "celer",
           "address": "0x6B8a4ea37C72F1992626eb9bD48d4aA6aa077c47",
           "type": "pool",
           "startBlock": 1000000,
@@ -273,6 +299,8 @@
         {
           "version": 2,
           "name": "CommitmentPool",
+          "poolName": "A Pool(since 07/20/2022)",
+          "bridgeType": "layerZero",
           "address": "0x81b7E08F65Bdf5648606c89998A9CC8164397647",
           "type": "pool",
           "startBlock": 1000000,
@@ -282,6 +310,8 @@
         {
           "version": 2,
           "name": "CommitmentPool",
+          "poolName": "A Pool(since 07/20/2022)",
+          "bridgeType": "axelar",
           "address": "0x2Dad9a5B2b0FaeD138Cf02176D2165b628Ac11fC",
           "type": "pool",
           "startBlock": 1000000,

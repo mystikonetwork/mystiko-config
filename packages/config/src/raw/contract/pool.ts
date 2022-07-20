@@ -2,16 +2,26 @@ import { Expose } from 'class-transformer';
 import {
   Equals,
   IsArray,
+  IsEnum,
   IsEthereumAddress,
   IsNotEmpty,
   IsNumberString,
   IsOptional,
   IsString,
 } from 'class-validator';
-import { ContractType } from '../../common';
+import { BridgeType, ContractType } from '../../common';
 import { RawContractConfig } from './base';
 
 export class RawPoolContractConfig extends RawContractConfig {
+  @Expose()
+  @IsString()
+  @IsNotEmpty()
+  public poolName: string;
+
+  @Expose()
+  @IsEnum(BridgeType)
+  public bridgeType: BridgeType;
+
   @Expose()
   @Equals(ContractType.POOL)
   public type: ContractType = ContractType.POOL;

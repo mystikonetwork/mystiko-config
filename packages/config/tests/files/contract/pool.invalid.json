@@ -1,6 +1,8 @@
 {
   "version": 2,
   "name": "CommitmentPool",
+  "poolName": "A Pool(since 07/20/2022)",
+  "bridgeType": "tbridge",
   "address": "0x961f315a836542e603a3df2e0dd9d4ecd06ebc67",
   "type": "pool",
   "startBlock": 1000000,

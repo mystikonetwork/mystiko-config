@@ -1,6 +1,6 @@
 import { check, fromDecimals, toBN } from '@mystikonetwork/utils';
 import BN from 'bn.js';
-import { AssetType, CircuitType } from '../../common';
+import { AssetType, BridgeType, CircuitType } from '../../common';
 import { RawPoolContractConfig } from '../../raw';
 import { AssetConfig } from '../asset';
 import { CircuitConfig } from '../circuit';
@@ -29,6 +29,14 @@ export class PoolContractConfig extends ContractConfig<RawPoolContractConfig, Au
     this.assetConfig = this.initAssetConfig(this.auxDataNotEmpty.assetConfigs);
     this.mainAssetConfig = this.auxDataNotEmpty.mainAssetConfig;
     this.validate();
+  }
+
+  public get poolName(): string {
+    return this.data.poolName;
+  }
+
+  public get bridgeType(): BridgeType {
+    return this.data.bridgeType;
   }
 
   public get asset(): AssetConfig {

@@ -65,6 +65,8 @@ beforeEach(async () => {
 });
 
 test('test equality', () => {
+  expect(config.poolName).toBe(rawConfig.poolName);
+  expect(config.bridgeType).toBe(rawConfig.bridgeType);
   expect(config.asset).toStrictEqual(assetConfigs.get('0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a'));
   expect(config.assetType).toBe(config.asset.assetType);
   expect(config.assetSymbol).toBe(config.asset.assetSymbol);
