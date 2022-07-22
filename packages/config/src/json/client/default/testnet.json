@@ -1210,12 +1210,6 @@
         },
         {
           "url": "https://nd-302-890-317.p2pify.com/430c98aabb1fe49ec6517602e1e40f01"
-        },
-        {
-          "url": "wss://speedy-nodes-nyc.moralis.io/d90e3898aa487ee11a6957b9/bsc/testnet/ws"
-        },
-        {
-          "url": "https://speedy-nodes-nyc.moralis.io/d90e3898aa487ee11a6957b9/bsc/testnet"
         }
       ],
       "signerEndpoint": "https://data-seed-prebsc-2-s2.binance.org:8545",
@@ -2140,12 +2134,6 @@
         },
         {
           "url": "https://nd-238-781-681.p2pify.com/796ca43c7ddc3121534c97e104d7a369/ext/bc/C/rpc"
-        },
-        {
-          "url": "wss://speedy-nodes-nyc.moralis.io/d90e3898aa487ee11a6957b9/avalanche/testnet/ws"
-        },
-        {
-          "url": "https://avax.getblock.io/testnet/ext/bc/C/rpc?api_key=71722c7c-f748-4ea3-bacd-6edc2900c4f0"
         }
       ],
       "signerEndpoint": "https://api.avax-test.network/ext/bc/C/rpc",

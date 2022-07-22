@@ -10,5 +10,5 @@ export class RawIndexerConfig extends RawConfig {
   @Expose()
   @IsInt()
   @IsPositive()
-  public timeoutMs: number = 5000;
+  public timeoutMs: number = 15000;
 }

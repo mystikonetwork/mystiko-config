@@ -74,7 +74,7 @@ export class RawChainConfig extends RawConfig {
   @Expose()
   @IsInt()
   @IsPositive()
-  public indexerFilterSize: number = 2000000;
+  public indexerFilterSize: number = 500000;
 
   @Expose()
   @Type(() => RawDepositContractConfig)
