@@ -2803,7 +2803,7 @@
           "peerChainId": 43113,
           "peerContractAddress": "0x163F2C6E21bfaA56FF2E48C2c846125eE4E218B0",
           "minAmount": "100000000000000000",
-          "minBridgeFee": "60000000000000000",
+          "minBridgeFee": "80000000000000000",
           "minExecutorFee": "0"
         },
         {
