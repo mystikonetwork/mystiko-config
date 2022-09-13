@@ -66,7 +66,7 @@ export class RawDepositContractConfig extends RawContractConfig {
   @Expose()
   @IsInt()
   @Min(0)
-  public serviceFee: number = 1000;
+  public serviceFee: number = 0;
 
   @Expose()
   @IsInt()
