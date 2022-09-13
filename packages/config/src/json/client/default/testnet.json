@@ -2532,20 +2532,20 @@
       "type": "transaction1x0",
       "isDefault": true,
       "programFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction1x0.program.gz",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction1x0.program.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction1x0.program.gz",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction1x0.program.gz"
       ],
       "abiFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction1x0.abi.json",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction1x0.abi.json"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction1x0.abi.json",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction1x0.abi.json"
       ],
       "provingKeyFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction1x0.pkey.gz",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction1x0.pkey.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction1x0.pkey.gz",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction1x0.pkey.gz"
       ],
       "verifyingKeyFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction1x0.vkey.gz",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction1x0.vkey.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction1x0.vkey.gz",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction1x0.vkey.gz"
       ]
     },
     {
@@ -2553,20 +2553,20 @@
       "type": "transaction1x1",
       "isDefault": true,
       "programFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction1x1.program.gz",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction1x1.program.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction1x1.program.gz",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction1x1.program.gz"
       ],
       "abiFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction1x1.abi.json",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction1x1.abi.json"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction1x1.abi.json",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction1x1.abi.json"
       ],
       "provingKeyFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction1x1.pkey.gz",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction1x1.pkey.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction1x1.pkey.gz",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction1x1.pkey.gz"
       ],
       "verifyingKeyFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction1x1.vkey.gz",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction1x1.vkey.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction1x1.vkey.gz",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction1x1.vkey.gz"
       ]
     },
     {
@@ -2574,20 +2574,20 @@
       "type": "transaction1x2",
       "isDefault": true,
       "programFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction1x2.program.gz",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction1x2.program.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction1x2.program.gz",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction1x2.program.gz"
       ],
       "abiFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction1x2.abi.json",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction1x2.abi.json"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction1x2.abi.json",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction1x2.abi.json"
       ],
       "provingKeyFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction1x2.pkey.gz",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction1x2.pkey.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction1x2.pkey.gz",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction1x2.pkey.gz"
       ],
       "verifyingKeyFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction1x2.vkey.gz",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction1x2.vkey.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction1x2.vkey.gz",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction1x2.vkey.gz"
       ]
     },
     {
@@ -2595,20 +2595,20 @@
       "type": "transaction2x0",
       "isDefault": true,
       "programFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction2x0.program.gz",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction2x0.program.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction2x0.program.gz",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction2x0.program.gz"
       ],
       "abiFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction2x0.abi.json",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction2x0.abi.json"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction2x0.abi.json",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction2x0.abi.json"
       ],
       "provingKeyFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction2x0.pkey.gz",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction2x0.pkey.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction2x0.pkey.gz",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction2x0.pkey.gz"
       ],
       "verifyingKeyFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction2x0.vkey.gz",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction2x0.vkey.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction2x0.vkey.gz",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction2x0.vkey.gz"
       ]
     },
     {
@@ -2616,20 +2616,20 @@
       "type": "transaction2x1",
       "isDefault": true,
       "programFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction2x1.program.gz",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction2x1.program.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction2x1.program.gz",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction2x1.program.gz"
       ],
       "abiFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction2x1.abi.json",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction2x1.abi.json"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction2x1.abi.json",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction2x1.abi.json"
       ],
       "provingKeyFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction2x1.pkey.gz",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction2x1.pkey.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction2x1.pkey.gz",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction2x1.pkey.gz"
       ],
       "verifyingKeyFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction2x1.vkey.gz",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction2x1.vkey.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction2x1.vkey.gz",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction2x1.vkey.gz"
       ]
     },
     {
@@ -2637,20 +2637,20 @@
       "type": "transaction2x2",
       "isDefault": true,
       "programFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction2x2.program.gz",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction2x2.program.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction2x2.program.gz",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction2x2.program.gz"
       ],
       "abiFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction2x2.abi.json",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction2x2.abi.json"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction2x2.abi.json",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction2x2.abi.json"
       ],
       "provingKeyFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction2x2.pkey.gz",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction2x2.pkey.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction2x2.pkey.gz",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction2x2.pkey.gz"
       ],
       "verifyingKeyFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Transaction2x2.vkey.gz",
-        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/a7bd31e84cade79d3c70bb073eabff3359d6970e/circuits/zokrates/development/Transaction2x2.vkey.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Transaction2x2.vkey.gz",
+        "https://raw.githubusercontent.com/mystikonetwork/mystiko-static/961bda2c1d535c373b3f1aa2b1a1f64034012ad4/circuits/zokrates/development/Transaction2x2.vkey.gz"
       ]
     },
     {
@@ -2658,16 +2658,16 @@
       "type": "rollup1",
       "isDefault": true,
       "programFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Rollup1.program.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Rollup1.program.gz"
       ],
       "abiFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Rollup1.abi.json"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Rollup1.abi.json"
       ],
       "provingKeyFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Rollup1.pkey.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Rollup1.pkey.gz"
       ],
       "verifyingKeyFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Rollup1.vkey.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Rollup1.vkey.gz"
       ]
     },
     {
@@ -2675,16 +2675,16 @@
       "type": "rollup4",
       "isDefault": true,
       "programFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Rollup4.program.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Rollup4.program.gz"
       ],
       "abiFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Rollup4.abi.json"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Rollup4.abi.json"
       ],
       "provingKeyFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Rollup4.pkey.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Rollup4.pkey.gz"
       ],
       "verifyingKeyFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Rollup4.vkey.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Rollup4.vkey.gz"
       ]
     },
     {
@@ -2692,16 +2692,16 @@
       "type": "rollup16",
       "isDefault": true,
       "programFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Rollup16.program.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Rollup16.program.gz"
       ],
       "abiFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Rollup16.abi.json"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Rollup16.abi.json"
       ],
       "provingKeyFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Rollup16.pkey.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Rollup16.pkey.gz"
       ],
       "verifyingKeyFile": [
-        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/7d8eb99/Rollup16.vkey.gz"
+        "https://mystiko-static.s3.ap-southeast-1.amazonaws.com/circuits/zokrates/development/19a56fa/Rollup16.vkey.gz"
       ]
     }
   ],
