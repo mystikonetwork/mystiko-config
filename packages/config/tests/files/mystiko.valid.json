@@ -32,6 +32,7 @@
           "peerChainId": 97,
           "peerContractAddress": "0xd791049D0a154bC7860804e1A18ACD148Eb0afD9",
           "minAmount": "10000000000000000",
+          "maxAmount": "100000000000000000",
           "minBridgeFee": "20000000000000000",
           "minExecutorFee": "30000000000000000"
         }
@@ -89,6 +90,7 @@
           "peerChainId": 3,
           "peerContractAddress": "0x961f315a836542e603a3df2e0dd9d4ecd06ebc67",
           "minAmount": "10000000000000000",
+          "maxAmount": "100000000000000000",
           "minBridgeFee": "20000000000000000",
           "minExecutorFee": "30000000000000000"
         }

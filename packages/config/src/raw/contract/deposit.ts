@@ -47,6 +47,10 @@ export class RawDepositContractConfig extends RawContractConfig {
 
   @Expose()
   @IsNumberString({ no_symbols: true })
+  public maxAmount: string = '0';
+
+  @Expose()
+  @IsNumberString({ no_symbols: true })
   public minBridgeFee: string = '0';
 
   @Expose()

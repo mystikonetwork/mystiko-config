@@ -14,6 +14,7 @@ beforeEach(async () => {
     peerChainId: 97,
     peerContractAddress: '0x98bF2d9e3bA2A8515E660BD4104432ce3e2D7547',
     minAmount: '10000000000000000',
+    maxAmount: '100000000000000000',
     minBridgeFee: '20000000000000000',
     minExecutorFee: '30000000000000000',
     bridgeFeeAssetAddress: '0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a',
@@ -57,6 +58,17 @@ test('test invalid minAmount', async () => {
   config.minAmount = '-1';
   await expect(config.validate()).rejects.toThrow();
   config.minAmount = '1.2';
+  await expect(config.validate()).rejects.toThrow();
+});
+
+test('test invalid maxAmount', async () => {
+  config.maxAmount = '';
+  await expect(config.validate()).rejects.toThrow();
+  config.maxAmount = '0xdeadbeef';
+  await expect(config.validate()).rejects.toThrow();
+  config.maxAmount = '-1';
+  await expect(config.validate()).rejects.toThrow();
+  config.maxAmount = '1.2';
   await expect(config.validate()).rejects.toThrow();
 });
 

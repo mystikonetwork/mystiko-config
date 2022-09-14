@@ -54,6 +54,14 @@ export class DepositContractConfig extends ContractConfig<RawDepositContractConf
     return fromDecimals(this.data.minAmount, this.assetDecimals);
   }
 
+  public get maxAmount(): BN {
+    return toBN(this.data.maxAmount);
+  }
+
+  public get maxAmountNumber(): number {
+    return fromDecimals(this.data.maxAmount, this.assetDecimals);
+  }
+
   public get minBridgeFee(): BN {
     return toBN(this.data.minBridgeFee);
   }
@@ -152,6 +160,10 @@ export class DepositContractConfig extends ContractConfig<RawDepositContractConf
   }
 
   private validate() {
+    check(
+      this.maxAmount.gte(this.minAmount),
+      `deposit contract=${this.address} maxAmount is less than minAmount`,
+    );
     if (this.bridgeType === BridgeType.LOOP) {
       check(
         !this.peerChainId,
