@@ -84,6 +84,7 @@ test('test peerChainIds', async () => {
     bridgeType: BridgeType.LOOP,
     poolAddress: '0x20Eb345870059E688c59e89523442ade33C7c813',
     minAmount: '10000000000000000',
+    maxAmount: '100000000000000000',
     minBridgeFee: '20000000000000000',
     minExecutorFee: '30000000000000000',
   });
@@ -151,6 +152,7 @@ test('test getAssetSymbols', async () => {
     bridgeType: BridgeType.LOOP,
     poolAddress: '0x954c6c78A2F93E6E19Ff1DE538F720311414530c',
     minAmount: '10000000000000000',
+    maxAmount: '100000000000000000',
     minBridgeFee: '20000000000000000',
     minExecutorFee: '30000000000000000',
   });
@@ -164,6 +166,7 @@ test('test getAssetSymbols', async () => {
     peerChainId: 97,
     peerContractAddress: '0x390de26d772d2e2005c6d1d24afc902bae37a4bb',
     minAmount: '10000000000000000',
+    maxAmount: '100000000000000000',
     minBridgeFee: '20000000000000000',
     minExecutorFee: '30000000000000000',
   });
@@ -197,6 +200,7 @@ test('test getBridges', async () => {
     bridgeType: BridgeType.LOOP,
     poolAddress: '0x6b8a4ea37c72f1992626eb9bd48d4aa6aa077c47',
     minAmount: '10000000000000000',
+    maxAmount: '100000000000000000',
     minBridgeFee: '20000000000000000',
     minExecutorFee: '30000000000000000',
   });
@@ -231,6 +235,7 @@ test('test getBridges', async () => {
     peerChainId: 97,
     peerContractAddress: '0x390de26d772d2e2005c6d1d24afc902bae37a4bb',
     minAmount: '10000000000000000',
+    maxAmount: '100000000000000000',
     minBridgeFee: '20000000000000000',
     minExecutorFee: '30000000000000000',
   });
@@ -269,6 +274,7 @@ test('test getDepositContract', async () => {
     peerChainId: 97,
     peerContractAddress: '0x390de26d772d2e2005c6d1d24afc902bae37a4bb',
     minAmount: '10000000000000000',
+    maxAmount: '100000000000000000',
     minBridgeFee: '20000000000000000',
     minExecutorFee: '30000000000000000',
   });
@@ -280,6 +286,7 @@ test('test getDepositContract', async () => {
     bridgeType: BridgeType.LOOP,
     poolAddress: '0x20Eb345870059E688c59e89523442ade33C7c813',
     minAmount: '10000000000000000',
+    maxAmount: '100000000000000000',
     minBridgeFee: '20000000000000000',
     minExecutorFee: '30000000000000000',
   });
@@ -327,6 +334,7 @@ test('test getPoolContract', async () => {
     peerChainId: 100,
     peerContractAddress: '0x390de26d772d2e2005c6d1d24afc902bae37a4bb',
     minAmount: '10000000000000000',
+    maxAmount: '100000000000000000',
     minBridgeFee: '20000000000000000',
     minExecutorFee: '30000000000000000',
   });
@@ -338,6 +346,7 @@ test('test getPoolContract', async () => {
     bridgeType: BridgeType.LOOP,
     poolAddress: '0x954c6c78A2F93E6E19Ff1DE538F720311414530c',
     minAmount: '10000000000000000',
+    maxAmount: '100000000000000000',
     minBridgeFee: '20000000000000000',
     minExecutorFee: '30000000000000000',
   });
@@ -494,6 +503,7 @@ test('test duplicate bridge and asset', async () => {
     peerChainId: 100,
     peerContractAddress: '0x390de26d772d2e2005c6d1d24afc902bae37a4bb',
     minAmount: '10000000000000000',
+    maxAmount: '100000000000000000',
     minBridgeFee: '20000000000000000',
     minExecutorFee: '30000000000000000',
   });
@@ -531,6 +541,7 @@ test('test different bridge with same pool address', async () => {
     bridgeType: BridgeType.LOOP,
     poolAddress: '0xF55Dbe8D71Df9Bbf5841052C75c6Ea9eA717fc6d',
     minAmount: '10000000000000000',
+    maxAmount: '100000000000000000',
     minBridgeFee: '20000000000000000',
     minExecutorFee: '30000000000000000',
   });

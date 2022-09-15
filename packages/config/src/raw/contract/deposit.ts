@@ -47,6 +47,10 @@ export class RawDepositContractConfig extends RawContractConfig {
 
   @Expose()
   @IsNumberString({ no_symbols: true })
+  public maxAmount: string = '0';
+
+  @Expose()
+  @IsNumberString({ no_symbols: true })
   public minBridgeFee: string = '0';
 
   @Expose()
@@ -66,7 +70,7 @@ export class RawDepositContractConfig extends RawContractConfig {
   @Expose()
   @IsInt()
   @Min(0)
-  public serviceFee: number = 1000;
+  public serviceFee: number = 0;
 
   @Expose()
   @IsInt()

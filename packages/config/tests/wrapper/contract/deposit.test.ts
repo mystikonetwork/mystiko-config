@@ -71,6 +71,8 @@ test('test equality', () => {
   expect(config.disabled).toBe(rawConfig.disabled);
   expect(config.minAmount.toString()).toBe(rawConfig.minAmount);
   expect(config.minAmountNumber).toBe(1);
+  expect(config.maxAmount.toString()).toBe(rawConfig.maxAmount);
+  expect(config.maxAmountNumber).toBe(10);
   expect(config.minBridgeFee.toString()).toBe(rawConfig.minBridgeFee);
   expect(config.minBridgeFeeNumber).toBe(2);
   expect(config.minExecutorFee.toString()).toBe(rawConfig.minExecutorFee);
@@ -205,6 +207,13 @@ test('test invalid rawConfig', () => {
   });
   expect(() => config.poolContract).toThrow(
     new Error(`no poolContract definition found for deposit contract=${rawConfig.address}`),
+  );
+});
+
+test('test invalid maxAmount', () => {
+  rawConfig.maxAmount = '10000';
+  expect(() => config.mutate(rawConfig)).toThrow(
+    `deposit contract=${config.address} maxAmount is less than minAmount`,
   );
 });
 
