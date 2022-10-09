@@ -35,8 +35,14 @@ export enum ContractType {
 
 export enum CircuitType {
   ROLLUP1 = 'rollup1',
+  ROLLUP2 = 'rollup2',
   ROLLUP4 = 'rollup4',
+  ROLLUP8 = 'rollup8',
   ROLLUP16 = 'rollup16',
+  ROLLUP32 = 'rollup32',
+  ROLLUP64 = 'rollup64',
+  ROLLUP128 = 'rollup128',
+  ROLLUP256 = 'rollup256',
   TRANSACTION1x0 = 'transaction1x0',
   TRANSACTION1x1 = 'transaction1x1',
   TRANSACTION1x2 = 'transaction1x2',
