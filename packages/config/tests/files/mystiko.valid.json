@@ -161,6 +161,15 @@
       "verifyingKeyFile": ["./v2/Rollup1.vkey.gz"]
     },
     {
+      "name": "zokrates-1.0-rollup2",
+      "type": "rollup2",
+      "isDefault": true,
+      "programFile": ["./Rollup2.program.gz"],
+      "abiFile": ["./Rollup2.abi.json"],
+      "provingKeyFile": ["./Rollup2.pkey.gz"],
+      "verifyingKeyFile": ["./Rollup2.vkey.gz"]
+    },
+    {
       "name": "zokrates-1.0-rollup4",
       "type": "rollup4",
       "isDefault": true,
@@ -168,6 +177,15 @@
       "abiFile": ["./Rollup4.abi.json"],
       "provingKeyFile": ["./Rollup4.pkey.gz"],
       "verifyingKeyFile": ["./Rollup4.vkey.gz"]
+    },
+    {
+      "name": "zokrates-1.0-rollup8",
+      "type": "rollup8",
+      "isDefault": true,
+      "programFile": ["./Rollup8.program.gz"],
+      "abiFile": ["./Rollup8.abi.json"],
+      "provingKeyFile": ["./Rollup8.pkey.gz"],
+      "verifyingKeyFile": ["./Rollup8.vkey.gz"]
     },
     {
       "name": "zokrates-1.0-rollup16",
