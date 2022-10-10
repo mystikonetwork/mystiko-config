@@ -19,12 +19,6 @@
         },
         {
           "url": "https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"
-        },
-        {
-          "url": "wss://eth-mainnet.alchemyapi.io/v2/X0WmNwQWIjARyvQ2io1aZk0F3IjJ2qcM"
-        },
-        {
-          "url": "https://eth-mainnet.alchemyapi.io/v2/X0WmNwQWIjARyvQ2io1aZk0F3IjJ2qcM"
         }
       ],
       "signerEndpoint": "https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
