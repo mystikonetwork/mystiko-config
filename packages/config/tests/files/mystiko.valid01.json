@@ -472,5 +472,6 @@
       "provingKeyFile": ["./Transaction2x2.pkey.gz"],
       "verifyingKeyFile": ["./Transaction2x2.vkey.gz"]
     }
-  ]
+  ],
+  "countryBlacklist": ["US", "CN"]
 }

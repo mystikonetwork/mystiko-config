@@ -253,5 +253,6 @@
   ],
   "indexer": {
     "url": "https://example.com"
-  }
+  },
+  "countryBlacklist": ["US", "CN"]
 }

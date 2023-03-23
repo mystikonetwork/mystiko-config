@@ -72,6 +72,10 @@ export class MystikoConfig extends BaseConfig<RawMystikoConfig> {
     return this.indexerConfig;
   }
 
+  public get countryBlacklist(): string[] {
+    return this.data.countryBlacklist;
+  }
+
   public getChainConfig(chainId: number): ChainConfig | undefined {
     return this.chainConfigs.get(chainId);
   }
