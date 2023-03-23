@@ -64,4 +64,9 @@ export class RawMystikoConfig extends RawConfig {
   @IsOptional()
   @ValidateNested()
   public indexer?: RawIndexerConfig = undefined;
+
+  @Expose()
+  @IsArray()
+  @ArrayUnique()
+  public countryBlacklist: string[] = [];
 }

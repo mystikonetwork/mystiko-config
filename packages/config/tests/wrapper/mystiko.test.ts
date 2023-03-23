@@ -24,6 +24,7 @@ test('test equality', () => {
   expect(config.circuits.map((conf) => conf.copyData()).sort()).toStrictEqual(rawConfig.circuits.sort());
   expect(config.bridges.map((conf) => conf.copyData()).sort()).toStrictEqual(rawConfig.bridges.sort());
   expect(config.indexer).toBe(undefined);
+  expect(config.countryBlacklist).toStrictEqual(rawConfig.countryBlacklist);
 });
 
 test('test getChainConfig', () => {

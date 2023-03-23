@@ -55,3 +55,7 @@ test('test invalid json file', async () => {
     RawConfig.createFromFile(RawMystikoConfig, 'tests/files/mystiko.invalid.json'),
   ).rejects.toThrow();
 });
+
+test('test country blacklist', () => {
+  expect(config.countryBlacklist).toStrictEqual(['US', 'CN']);
+});
