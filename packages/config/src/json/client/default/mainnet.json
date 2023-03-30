@@ -111,6 +111,152 @@
           "assetAddress": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         }
       ]
+    },
+    {
+      "name": "BSC",
+      "assetSymbol": "BNB",
+      "assetDecimals": 18,
+      "recommendedAmounts": [
+        "1000000000000000000",
+        "10000000000000000000",
+        "100000000000000000000",
+        "1000000000000000000000"
+      ],
+      "chainId": 56,
+      "explorerUrl": "https://bscscan.com",
+      "providers": [
+        {
+          "url": "https://bsc-dataseed1.binance.org"
+        },
+        {
+          "url": "https://bsc-dataseed1.defibit.io"
+        },
+        {
+          "url": "https://bsc-dataseed1.ninicoin.io"
+        }
+      ],
+      "signerEndpoint": "https://bsc-dataseed1.binance.org",
+      "depositContracts": [
+        {
+          "version": 1,
+          "name": "MystikoV2LoopMain",
+          "address": "0x7F88F2A3Cf18E96844E14CaE59EC97B908734C01",
+          "startBlock": 26910632,
+          "bridgeType": "loop",
+          "poolAddress": "0x932f3DD5b6C0F5fe1aEc31Cb38B7a57d01496411",
+          "minAmount": "1000000000000000000",
+          "maxAmount": "10000000000000000000000"
+        },
+        {
+          "version": 1,
+          "name": "MystikoV2LoopERC20",
+          "address": "0x01BC19b166986431F3f2A348497C4634defb4C29",
+          "startBlock": 26910639,
+          "bridgeType": "loop",
+          "poolAddress": "0x62121886c954d7e23077f52217b51c26ad26bE9e",
+          "minAmount": "100000000000000000000",
+          "maxAmount": "1000000000000000000000000"
+        },
+        {
+          "version": 1,
+          "name": "MystikoV2LoopERC20",
+          "address": "0x53DFAB04453EF45bc637c2687020990c7C8C16bc",
+          "startBlock": 26910646,
+          "bridgeType": "loop",
+          "poolAddress": "0x4333Ab5682Cd4589330BD9CFcedd5E054A0e9d8D",
+          "minAmount": "100000000000000000000",
+          "maxAmount": "1000000000000000000000000"
+        },
+        {
+          "version": 1,
+          "name": "MystikoV2LoopERC20",
+          "address": "0x4a6caE179dCb4423F548c2D1F48589374FbC6c67",
+          "startBlock": 26910653,
+          "bridgeType": "loop",
+          "poolAddress": "0xCaD4cbfBe2cC6B85753Fb4b3614E88EA749dBb61",
+          "minAmount": "100000000000000000000",
+          "maxAmount": "1000000000000000000000000"
+        }
+      ],
+      "poolContracts": [
+        {
+          "version": 1,
+          "name": "CommitmentPool",
+          "poolName": "alpha-20230223",
+          "bridgeType": "loop",
+          "address": "0x932f3DD5b6C0F5fe1aEc31Cb38B7a57d01496411",
+          "startBlock": 26910630,
+          "minRollupFee": "4000000000000000"
+        },
+        {
+          "version": 1,
+          "name": "CommitmentPool",
+          "poolName": "alpha-20230223",
+          "bridgeType": "loop",
+          "address": "0x62121886c954d7e23077f52217b51c26ad26bE9e",
+          "startBlock": 26910636,
+          "assetAddress": "0x55d398326f99059ff775485246999027b3197955",
+          "minRollupFee": "1000000000000000000"
+        },
+        {
+          "version": 1,
+          "name": "CommitmentPool",
+          "poolName": "alpha-20230223",
+          "bridgeType": "loop",
+          "address": "0x4333Ab5682Cd4589330BD9CFcedd5E054A0e9d8D",
+          "startBlock": 26910643,
+          "assetAddress": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+          "minRollupFee": "1000000000000000000"
+        },
+        {
+          "version": 1,
+          "name": "CommitmentPool",
+          "poolName": "alpha-20230223",
+          "bridgeType": "loop",
+          "address": "0xCaD4cbfBe2cC6B85753Fb4b3614E88EA749dBb61",
+          "startBlock": 26910651,
+          "assetAddress": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+          "minRollupFee": "1000000000000000000"
+        }
+      ],
+      "assets": [
+        {
+          "assetType": "erc20",
+          "assetSymbol": "USDT",
+          "assetDecimals": 18,
+          "recommendedAmounts": [
+            "100000000000000000000",
+            "1000000000000000000000",
+            "10000000000000000000000",
+            "100000000000000000000000"
+          ],
+          "assetAddress": "0x55d398326f99059ff775485246999027b3197955"
+        },
+        {
+          "assetType": "erc20",
+          "assetSymbol": "USDC",
+          "assetDecimals": 18,
+          "recommendedAmounts": [
+            "100000000000000000000",
+            "1000000000000000000000",
+            "10000000000000000000000",
+            "100000000000000000000000"
+          ],
+          "assetAddress": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d"
+        },
+        {
+          "assetType": "erc20",
+          "assetSymbol": "BUSD",
+          "assetDecimals": 18,
+          "recommendedAmounts": [
+            "100000000000000000000",
+            "1000000000000000000000",
+            "10000000000000000000000",
+            "100000000000000000000000"
+          ],
+          "assetAddress": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
+        }
+      ]
     }
   ],
   "bridges": [],
