@@ -1,6 +1,8 @@
+import nock from 'nock';
 import {
   BridgeType,
   CircuitType,
+  CONFIG_BASE_URL,
   MystikoConfig,
   RawChainConfig,
   RawCircuitConfig,
@@ -20,6 +22,7 @@ beforeEach(async () => {
 
 test('test equality', () => {
   expect(config.version).toBe(rawConfig.version);
+  expect(config.gitRevision).toBe(rawConfig.gitRevision);
   expect(config.chains.map((conf) => conf.copyData()).sort()).toStrictEqual(rawConfig.chains.sort());
   expect(config.circuits.map((conf) => conf.copyData()).sort()).toStrictEqual(rawConfig.circuits.sort());
   expect(config.bridges.map((conf) => conf.copyData()).sort()).toStrictEqual(rawConfig.bridges.sort());
@@ -298,12 +301,71 @@ test('test peerContractAddress mismatch', async () => {
   );
 });
 
+test('test createFromRemote', async () => {
+  nock(CONFIG_BASE_URL).get('/production/testnet/latest.json').reply(200, {
+    version: '1.0.0',
+  });
+  nock(CONFIG_BASE_URL).get('/production/mainnet/latest.json').reply(200, {
+    version: '2.0.0',
+  });
+  nock(CONFIG_BASE_URL).get('/production/testnet/b6b5b1b/config.json').reply(200, {
+    version: '3.0.0',
+  });
+  nock(CONFIG_BASE_URL).get('/production/mainnet/b6b5b1b/config.json').reply(200, {
+    version: '4.0.0',
+  });
+  nock(CONFIG_BASE_URL).get('/staging/testnet/latest.json').reply(200, {
+    version: '5.0.0',
+  });
+  nock(CONFIG_BASE_URL).get('/staging/mainnet/latest.json').reply(200, {
+    version: '6.0.0',
+  });
+  nock(CONFIG_BASE_URL).get('/staging/testnet/b6b5b1b/config.json').reply(200, {
+    version: '7.0.0',
+  });
+  nock(CONFIG_BASE_URL).get('/staging/mainnet/b6b5b1b/config.json').reply(200, {
+    version: '8.0.0',
+  });
+  nock('https://example.com/config').get('/production/testnet/latest.json').reply(200, {
+    version: '9.0.0',
+  });
+  nock('https://example.com/config').get('/production/mainnet/latest.json').reply(500);
+  expect((await MystikoConfig.createFromRemote({ isTestnet: true })).version).toBe('1.0.0');
+  expect((await MystikoConfig.createFromRemote()).version).toBe('2.0.0');
+  expect((await MystikoConfig.createFromRemote({ isTestnet: true, gitRevision: 'b6b5b1b' })).version).toBe(
+    '3.0.0',
+  );
+  expect((await MystikoConfig.createFromRemote({ gitRevision: 'b6b5b1b' })).version).toBe('4.0.0');
+  expect((await MystikoConfig.createFromRemote({ isStaging: true, isTestnet: true })).version).toBe('5.0.0');
+  expect((await MystikoConfig.createFromRemote({ isStaging: true })).version).toBe('6.0.0');
+  expect(
+    (await MystikoConfig.createFromRemote({ isStaging: true, isTestnet: true, gitRevision: 'b6b5b1b' }))
+      .version,
+  ).toBe('7.0.0');
+  expect((await MystikoConfig.createFromRemote({ isStaging: true, gitRevision: 'b6b5b1b' })).version).toBe(
+    '8.0.0',
+  );
+  expect(
+    (await MystikoConfig.createFromRemote({ isTestnet: true, baseUrl: 'https://example.com/config' }))
+      .version,
+  ).toBe('9.0.0');
+  await expect(MystikoConfig.createFromRemote({ baseUrl: 'https://example.com/config' })).rejects.toThrow();
+});
+
 test('test createDefaultTestnetConfig', async () => {
-  await MystikoConfig.createDefaultTestnetConfig();
+  nock(CONFIG_BASE_URL).get('/production/testnet/latest.json').reply(200, {
+    version: '1.1.0',
+  });
+  const defaultConfig = await MystikoConfig.createDefaultTestnetConfig();
+  expect(defaultConfig.version).toBe('1.1.0');
 });
 
 test('test createDefaultMainnetConfig', async () => {
-  await MystikoConfig.createDefaultMainnetConfig();
+  nock(CONFIG_BASE_URL).get('/production/mainnet/latest.json').reply(200, {
+    version: '1.2.0',
+  });
+  const defaultConfig = await MystikoConfig.createDefaultMainnetConfig();
+  expect(defaultConfig.version).toBe('1.2.0');
 });
 
 test('test getTransactionUrl', () => {

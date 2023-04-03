@@ -27,6 +27,9 @@ export class RawMystikoConfig extends RawConfig {
   public version: string = '0.1.0';
 
   @Expose()
+  public gitRevision?: string = undefined;
+
+  @Expose()
   @Type(() => RawChainConfig)
   @ValidateNested()
   @IsArray()
