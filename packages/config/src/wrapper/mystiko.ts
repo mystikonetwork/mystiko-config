@@ -1,7 +1,6 @@
 import { check } from '@mystikonetwork/utils';
+import axios from 'axios';
 import { BridgeType, CircuitType } from '../common';
-import defaultClientMainnetConfig from '../json/client/default/mainnet.json';
-import defaultClientTestnetConfig from '../json/client/default/testnet.json';
 import {
   RawAxelarBridgeConfig,
   RawCelerBridgeConfig,
@@ -30,6 +29,15 @@ export type BridgeConfigType =
   | PolyBridgeConfig
   | TBridgeConfig;
 
+export const CONFIG_BASE_URL = 'https://static.mystiko.network/config';
+
+export type ConfigRemoteOptions = {
+  isTestnet?: boolean;
+  isStaging?: boolean;
+  gitRevision?: string;
+  baseUrl?: string;
+};
+
 export class MystikoConfig extends BaseConfig<RawMystikoConfig> {
   private readonly defaultCircuitConfigs: Map<CircuitType, CircuitConfig>;
 
@@ -54,6 +62,10 @@ export class MystikoConfig extends BaseConfig<RawMystikoConfig> {
 
   public get version(): string {
     return this.data.version;
+  }
+
+  public get gitRevision(): string | undefined {
+    return this.data.gitRevision;
   }
 
   public get circuits(): CircuitConfig[] {
@@ -183,12 +195,24 @@ export class MystikoConfig extends BaseConfig<RawMystikoConfig> {
     );
   }
 
+  public static createFromRemote(options?: ConfigRemoteOptions): Promise<MystikoConfig> {
+    const wrappedOptions: ConfigRemoteOptions = options || {};
+    const baseUrl = wrappedOptions.baseUrl || CONFIG_BASE_URL;
+    const environment = wrappedOptions.isStaging ? 'staging' : 'production';
+    const network = wrappedOptions.isTestnet ? 'testnet' : 'mainnet';
+    let url = `${baseUrl}/${environment}/${network}/latest.json`;
+    if (wrappedOptions.gitRevision) {
+      url = `${baseUrl}/${environment}/${network}/${wrappedOptions.gitRevision}/config.json`;
+    }
+    return axios.get(url).then((response) => MystikoConfig.createFromPlain(response.data));
+  }
+
   public static createDefaultTestnetConfig(): Promise<MystikoConfig> {
-    return MystikoConfig.createFromPlain(defaultClientTestnetConfig);
+    return MystikoConfig.createFromRemote({ isTestnet: true });
   }
 
   public static createDefaultMainnetConfig(): Promise<MystikoConfig> {
-    return MystikoConfig.createFromPlain(defaultClientMainnetConfig);
+    return MystikoConfig.createFromRemote();
   }
 
   private initCircuitConfigs() {
