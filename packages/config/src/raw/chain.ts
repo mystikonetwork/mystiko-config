@@ -4,14 +4,18 @@ import {
   ArrayUnique,
   Contains,
   IsArray,
+  IsEnum,
   IsInt,
   IsNotEmpty,
   IsNumberString,
   IsPositive,
   IsString,
   IsUrl,
+  Max,
+  Min,
   ValidateNested,
 } from 'class-validator';
+import { ProviderType } from '../common';
 import { RawAssetConfig } from './asset';
 import { RawConfig } from './base';
 import { RawDepositContractConfig, RawPoolContractConfig } from './contract';
@@ -63,8 +67,23 @@ export class RawChainConfig extends RawConfig {
   public providers: Array<RawProviderConfig> = [];
 
   @Expose()
+  @IsEnum(ProviderType)
+  public providerType: ProviderType = ProviderType.FAILOVER;
+
+  @Expose()
+  @IsInt()
+  @Min(50)
+  @Max(100)
+  public providerQuorumPercentage: number = 50;
+
+  @Expose()
   @IsUrl({ protocols: ['http', 'https'], require_tld: false })
   public signerEndpoint: string;
+
+  @Expose()
+  @IsInt()
+  @Min(0)
+  public eventFilterBlockBackoff: number = 0;
 
   @Expose()
   @IsInt()

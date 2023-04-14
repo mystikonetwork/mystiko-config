@@ -52,9 +52,12 @@ test('test equality', () => {
   expect(config.explorerUrl).toBe(rawConfig.explorerUrl);
   expect(config.explorerPrefix).toBe(rawConfig.explorerPrefix);
   expect(config.signerEndpoint).toBe(rawConfig.signerEndpoint);
+  expect(config.eventFilterBlockBackoff).toBe(rawConfig.eventFilterBlockBackoff);
   expect(config.eventFilterSize).toBe(rawConfig.eventFilterSize);
   expect(config.indexerFilterSize).toBe(rawConfig.indexerFilterSize);
   expect(config.providers).toStrictEqual(rawConfig.providers.map((raw) => new ProviderConfig(raw)));
+  expect(config.providerType).toBe(rawConfig.providerType);
+  expect(config.providerQuorumPercentage).toBe(rawConfig.providerQuorumPercentage);
   expect(config.poolContracts.length).toBe(rawConfig.poolContracts.length);
   expect(config.poolContracts.map((conf) => conf.address).sort()).toStrictEqual(
     rawConfig.poolContracts.map((conf) => conf.address).sort(),

@@ -12,6 +12,7 @@ test('test equality', () => {
   expect(config.url).toBe(rawConfig.url);
   expect(config.timeoutMs).toBe(rawConfig.timeoutMs);
   expect(config.maxTryCount).toBe(rawConfig.maxTryCount);
+  expect(config.quorumWeight).toBe(rawConfig.quorumWeight);
 });
 
 test('test copy', () => {

@@ -1,6 +1,6 @@
 {
   "name": "mystiko-config",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Configuration of Mystiko.Network",
   "private": true,
   "repository": "https://github.com/mystikonetwork/mystiko-config",

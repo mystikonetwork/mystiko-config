@@ -1,7 +1,7 @@
 import {
   AssetType,
   BridgeType,
-  ContractType,
+  ContractType, ProviderType,
   RawAssetConfig,
   RawChainConfig,
   RawConfig,
@@ -80,9 +80,12 @@ beforeEach(async () => {
     recommendedAmounts: ['1000000000000000000', '10000000000000000000'],
     explorerUrl: 'https://ropsten.etherscan.io',
     explorerPrefix: '/tx/%tx%',
+    eventFilterBlockBackoff: 200,
     eventFilterSize: 1000,
     indexerFilterSize: 10000,
     providers: [providerConfig],
+    providerType: ProviderType.QUORUM,
+    providerQuorumPercentage: 80,
     signerEndpoint: 'https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
     depositContracts: [depositContractConfig],
     poolContracts: [poolContractConfig],
@@ -154,6 +157,13 @@ test('test invalid signerEndpoint', async () => {
   await expect(config.validate()).rejects.toThrow();
 });
 
+test('test invalid eventFilterBlockBackoff', async () => {
+  config.eventFilterBlockBackoff = -1;
+  await expect(config.validate()).rejects.toThrow();
+  config.eventFilterBlockBackoff = 2.3;
+  await expect(config.validate()).rejects.toThrow();
+});
+
 test('test invalid eventFilterSize', async () => {
   config.eventFilterSize = 0;
   await expect(config.validate()).rejects.toThrow();
@@ -189,6 +199,15 @@ test('test invalid assets', async () => {
   await expect(config.validate()).rejects.toThrow();
   assetConfig.assetDecimals = 1.2;
   config.assets = [assetConfig];
+  await expect(config.validate()).rejects.toThrow();
+});
+
+test('test invalid providerQuorumPercentage', async () => {
+  config.providerQuorumPercentage = 49;
+  await expect(config.validate()).rejects.toThrow();
+  config.providerQuorumPercentage = 101;
+  await expect(config.validate()).rejects.toThrow();
+  config.providerQuorumPercentage = 10.1;
   await expect(config.validate()).rejects.toThrow();
 });
 
