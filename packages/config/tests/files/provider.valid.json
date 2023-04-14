@@ -1,5 +1,6 @@
 {
   "url": "http://localhost:8545",
   "timeoutMs": 100000,
-  "maxTryCount": 5
+  "maxTryCount": 5,
+  "quorumWeight": 2
 }

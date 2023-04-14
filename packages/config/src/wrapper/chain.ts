@@ -1,6 +1,6 @@
 import { check } from '@mystikonetwork/utils';
 import BN from 'bn.js';
-import { AssetType, BridgeType, CircuitType } from '../common';
+import { AssetType, BridgeType, CircuitType, ProviderType } from '../common';
 import { EXPLORER_TX_PLACEHOLDER, RawAssetConfig, RawChainConfig } from '../raw';
 import { AssetConfig, MAIN_ASSET_ADDRESS } from './asset';
 import { BaseConfig } from './base';
@@ -79,8 +79,20 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
     return this.providerConfigs;
   }
 
+  public get providerType(): ProviderType {
+    return this.data.providerType;
+  }
+
+  public get providerQuorumPercentage(): number {
+    return this.data.providerQuorumPercentage;
+  }
+
   public get signerEndpoint(): string {
     return this.data.signerEndpoint;
+  }
+
+  public get eventFilterBlockBackoff(): number {
+    return this.data.eventFilterBlockBackoff;
   }
 
   public get eventFilterSize(): number {

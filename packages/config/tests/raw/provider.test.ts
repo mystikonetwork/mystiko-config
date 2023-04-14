@@ -7,6 +7,7 @@ beforeEach(async () => {
     url: 'http://localhost:8545',
     timeoutMs: 100000,
     maxTryCount: 5,
+    quorumWeight: 2,
   });
 });
 
@@ -29,7 +30,14 @@ test('test invalid timeoutMs', async () => {
 test('test invalid maxTryCount', async () => {
   config.maxTryCount = 0;
   await expect(config.validate()).rejects.toThrow();
-  config.timeoutMs = 2.4;
+  config.maxTryCount = 2.4;
+  await expect(config.validate()).rejects.toThrow();
+});
+
+test('test invalid quorumWeight', async () => {
+  config.quorumWeight = 0;
+  await expect(config.validate()).rejects.toThrow();
+  config.quorumWeight = 2.4;
   await expect(config.validate()).rejects.toThrow();
 });
 

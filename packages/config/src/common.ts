@@ -47,6 +47,11 @@ export enum CircuitType {
   TRANSACTION2x2 = 'transaction2x2',
 }
 
+export enum ProviderType {
+  QUORUM = 'quorum',
+  FAILOVER = 'failover',
+}
+
 /**
  * @function module:mystiko/models.isValidBridgeType
  * @desc check whether given type is one of the supported bridge types.

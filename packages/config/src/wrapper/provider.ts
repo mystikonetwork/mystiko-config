@@ -14,6 +14,10 @@ export class ProviderConfig extends BaseConfig<RawProviderConfig> {
     return this.data.maxTryCount;
   }
 
+  public get quorumWeight(): number {
+    return this.data.quorumWeight;
+  }
+
   public mutate(data?: RawProviderConfig): ProviderConfig {
     return new ProviderConfig(data || this.data);
   }

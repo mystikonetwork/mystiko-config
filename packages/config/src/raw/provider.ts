@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { IsInt, IsPositive, IsUrl } from 'class-validator';
+import { IsInt, IsPositive, IsUrl, Min } from 'class-validator';
 import { RawConfig } from './base';
 
 export class RawProviderConfig extends RawConfig {
@@ -16,4 +16,9 @@ export class RawProviderConfig extends RawConfig {
   @IsInt()
   @IsPositive()
   public maxTryCount: number = 2;
+
+  @Expose()
+  @IsInt()
+  @Min(1)
+  public quorumWeight: number = 1;
 }
