@@ -1,7 +1,8 @@
 import {
   AssetType,
   BridgeType,
-  ContractType, ProviderType,
+  ContractType,
+  ProviderType,
   RawAssetConfig,
   RawChainConfig,
   RawConfig,
