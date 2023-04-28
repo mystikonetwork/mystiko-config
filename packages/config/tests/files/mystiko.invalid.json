@@ -7,6 +7,7 @@
       "assetSymbol": "ETH",
       "assetDecimals": 18,
       "explorerUrl": "https://ropsten.etherscan.io",
+      "explorerApiUrl": "https://api-ropsten.etherscan.io",
       "explorerPrefix": "/tx/%tx%",
       "providers": [
         {
@@ -63,6 +64,7 @@
       "assetSymbol": "BNB",
       "assetDecimals": 18,
       "explorerUrl": "https://testnet.bscscan.com",
+      "explorerApiUrl": "https://api-testnet.bscscan.com",
       "explorerPrefix": "/tx/%tx%",
       "providers": [
         {

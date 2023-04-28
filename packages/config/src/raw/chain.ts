@@ -60,6 +60,10 @@ export class RawChainConfig extends RawConfig {
   public explorerPrefix: string = EXPLORER_DEFAULT_PREFIX;
 
   @Expose()
+  @IsUrl({ protocols: ['http', 'https'], require_tld: false })
+  public explorerApiUrl: string;
+
+  @Expose()
   @Type(() => RawProviderConfig)
   @ValidateNested()
   @ArrayNotEmpty()
