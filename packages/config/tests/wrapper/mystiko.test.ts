@@ -234,6 +234,7 @@ test('test duplicate chain config', async () => {
       assetSymbol: 'ETH',
       assetDecimals: 18,
       explorerUrl: 'https://ropsten.etherscan.io',
+      explorerApiUrl: 'https://api-ropsten.etherscan.io',
       explorerPrefix: '/tx/%tx%',
       providers: [
         {

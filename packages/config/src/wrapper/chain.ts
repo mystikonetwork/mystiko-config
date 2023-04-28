@@ -71,6 +71,10 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
     return this.data.explorerUrl;
   }
 
+  public get explorerApiUrl(): string {
+    return this.data.explorerApiUrl;
+  }
+
   public get explorerPrefix(): string {
     return this.data.explorerPrefix;
   }

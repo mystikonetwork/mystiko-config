@@ -50,6 +50,7 @@ test('test equality', () => {
   ]);
   expect(config.recommendedAmountsNumber).toStrictEqual([1, 10]);
   expect(config.explorerUrl).toBe(rawConfig.explorerUrl);
+  expect(config.explorerApiUrl).toBe(rawConfig.explorerApiUrl);
   expect(config.explorerPrefix).toBe(rawConfig.explorerPrefix);
   expect(config.signerEndpoint).toBe(rawConfig.signerEndpoint);
   expect(config.eventFilterBlockBackoff).toBe(rawConfig.eventFilterBlockBackoff);

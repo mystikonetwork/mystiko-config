@@ -80,6 +80,7 @@ beforeEach(async () => {
     assetDecimals: 18,
     recommendedAmounts: ['1000000000000000000', '10000000000000000000'],
     explorerUrl: 'https://ropsten.etherscan.io',
+    explorerApiUrl: 'https://api-ropsten.etherscan.io',
     explorerPrefix: '/tx/%tx%',
     eventFilterBlockBackoff: 200,
     eventFilterSize: 1000,
