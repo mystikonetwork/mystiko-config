@@ -1,3 +1,4 @@
+import { PackerChecksum, PackerCompression } from '../common';
 import { RawPackerConfig } from '../raw';
 import { BaseConfig } from './base';
 
@@ -14,11 +15,11 @@ export class PackerConfig extends BaseConfig<RawPackerConfig> {
     return this.data.version;
   }
 
-  public get checksum(): string {
+  public get checksum(): PackerChecksum {
     return this.data.checksum;
   }
 
-  public get compression(): string {
+  public get compression(): PackerCompression {
     return this.data.compression;
   }
 
