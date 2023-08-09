@@ -6,4 +6,5 @@ export * from './chain';
 export * from './circuit';
 export * from './indexer';
 export * from './mystiko';
+export * from './packer';
 export * from './provider';

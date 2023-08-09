@@ -27,6 +27,8 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
 
   private readonly providerConfigs: ProviderConfig[];
 
+  private readonly sortedPackerGranularities: number[];
+
   constructor(data: RawChainConfig, auxData?: AuxData) {
     super(data, auxData);
     this.mainAssetConfig = this.initMainAssetConfig();
@@ -41,6 +43,7 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
     );
     this.poolConfigsByAssetAndBridge = this.initPoolConfigsByAssetAndBridge();
     this.providerConfigs = this.data.providers.map((raw) => new ProviderConfig(raw));
+    this.sortedPackerGranularities = data.packerGranularities.sort((a, b) => a - b);
   }
 
   public get chainId(): number {
@@ -121,6 +124,22 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
 
   public get assets(): AssetConfig[] {
     return Array.from(this.assetConfigs.values());
+  }
+
+  public get granularities(): number[] {
+    return this.sortedPackerGranularities;
+  }
+
+  public get minGranularity(): number {
+    return this.sortedPackerGranularities[0];
+  }
+
+  public get startBlock(): number {
+    const startBlocks = [
+      ...this.poolContracts.map((config) => config.startBlock),
+      ...this.depositContractsWithDisabled.map((config) => config.startBlock),
+    ];
+    return startBlocks.length === 0 ? 0 : Math.min(...startBlocks);
   }
 
   public get peerChainIds(): number[] {

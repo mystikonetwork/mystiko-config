@@ -9,6 +9,7 @@ import {
   RawConfig,
   RawIndexerConfig,
   RawMystikoConfig,
+  RawPackerConfig,
   RawTBridgeConfig,
 } from '../../src';
 
@@ -244,6 +245,7 @@ test('test duplicate chain config', async () => {
       signerEndpoint: 'https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
       depositContracts: [],
       poolContracts: [],
+      packerGranularities: [32000, 8000, 4000],
     }),
   );
   await expect(MystikoConfig.createFromRaw(rawConfig)).rejects.toThrow();
@@ -384,6 +386,12 @@ test('test get indexer config', async () => {
   rawConfig.indexer = await RawConfig.createFromFile(RawIndexerConfig, 'tests/files/indexer.valid.json');
   config = await MystikoConfig.createFromRaw(rawConfig);
   expect(config.indexer?.url).toBe('https://example.com');
+});
+
+test('test get packer config', async () => {
+  rawConfig.packer = await RawConfig.createFromFile(RawPackerConfig, 'tests/files/packer.valid.json');
+  config = await MystikoConfig.createFromRaw(rawConfig);
+  expect(config.packer?.url).toBe('https://static.mystiko.network/packer/v2');
 });
 
 test('test mutate', () => {
