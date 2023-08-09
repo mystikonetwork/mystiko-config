@@ -119,4 +119,12 @@ export class RawChainConfig extends RawConfig {
   @IsArray()
   @ArrayUnique((conf) => conf.assetAddress)
   public assets: RawAssetConfig[] = [];
+
+  @Expose()
+  @IsArray()
+  @ArrayUnique()
+  @ArrayNotEmpty()
+  @IsInt({ each: true })
+  @IsPositive({ each: true })
+  public packerGranularities: number[] = [];
 }

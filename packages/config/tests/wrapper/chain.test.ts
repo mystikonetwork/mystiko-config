@@ -69,6 +69,9 @@ test('test equality', () => {
     rawConfig.depositContracts.map((conf) => conf.address).sort(),
   );
   expect(config.assets.length).toBe(1);
+  expect(config.granularities).toStrictEqual([4000, 8000, 32000]);
+  expect(config.minGranularity).toBe(4000);
+  expect(config.startBlock).toBe(1000000);
 });
 
 test('test peerChainIds', async () => {
@@ -576,6 +579,33 @@ test('test getTransactionUrl', () => {
   expect(config.getTransactionUrl('0xbce8d733536ee3b769456cf91bebae1e9e5be6cb89bb7490c6225384e1bc5e3e')).toBe(
     'https://ropsten.etherscan.io/tx/0xbce8d733536ee3b769456cf91bebae1e9e5be6cb89bb7490c6225384e1bc5e3e',
   );
+});
+
+test('test empty contracts', async () => {
+  const rawConfig1 = await RawConfig.createFromObject(RawChainConfig, {
+    chainId: 3,
+    name: 'Ethereum Ropsten',
+    assetSymbol: 'ETH',
+    assetDecimals: 18,
+    explorerUrl: 'https://ropsten.etherscan.io',
+    explorerApiUrl: 'https://api-ropsten.etherscan.io',
+    explorerPrefix: '/tx/%tx%',
+    providers: [
+      {
+        url: 'http://localhost:8545',
+      },
+    ],
+    signerEndpoint: 'https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+    depositContracts: [],
+    poolContracts: [],
+    packerGranularities: [32000, 8000, 4000],
+  });
+  const config1 = new ChainConfig(rawConfig1, {
+    defaultCircuitConfigs: new Map<CircuitType, CircuitConfig>(),
+    circuitConfigsByName: new Map<string, CircuitConfig>(),
+    depositContractGetter: () => undefined,
+  });
+  expect(config1.startBlock).toBe(0);
 });
 
 test('test copy', () => {

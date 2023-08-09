@@ -59,7 +59,8 @@
         "assetDecimals": 16,
         "assetAddress": "0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a",
         "recommendedAmounts": ["10000000000000000", "100000000000000000"]
-      }]
+      }],
+      "packerGranularities": [8000, 1000, 4000]
     },
     {
       "chainId": 97,
@@ -116,7 +117,8 @@
         "assetSymbol": "MTT",
         "assetDecimals": 16,
         "assetAddress": "0xaA055A9888e414faF9f0DA3F4cb4C56Df8a4bdA9"
-      }]
+      }],
+      "packerGranularities": [8000, 1000, 4000]
     }
   ],
   "bridges": [
@@ -256,6 +258,9 @@
   ],
   "indexer": {
     "url": "https://example.com"
+  },
+  "packer": {
+    "url": "https://static.mystiko.network/packer/v1"
   },
   "countryBlacklist": ["US", "CN"]
 }

@@ -52,7 +52,7 @@ function initPoolContractConfig(): Promise<RawPoolContractConfig> {
     bridgeType: BridgeType.TBRIDGE,
     address: '0xF55Dbe8D71Df9Bbf5841052C75c6Ea9eA717fc6d',
     type: ContractType.POOL,
-    startBlock: 1000000,
+    startBlock: 1000001,
     assetAddress: '0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a',
     minRollupFee: '40000000000000000',
     circuits: ['circuit-1.0'],
@@ -92,6 +92,7 @@ beforeEach(async () => {
     depositContracts: [depositContractConfig],
     poolContracts: [poolContractConfig],
     assets: [assetConfig],
+    packerGranularities: [32000, 8000, 4000],
   });
 });
 
@@ -210,6 +211,17 @@ test('test invalid providerQuorumPercentage', async () => {
   config.providerQuorumPercentage = 101;
   await expect(config.validate()).rejects.toThrow();
   config.providerQuorumPercentage = 10.1;
+  await expect(config.validate()).rejects.toThrow();
+});
+
+test('test invalid packerGranularities', async () => {
+  config.packerGranularities = [];
+  await expect(config.validate()).rejects.toThrow();
+  config.packerGranularities = [-1, 200];
+  await expect(config.validate()).rejects.toThrow();
+  config.packerGranularities = [200, 200];
+  await expect(config.validate()).rejects.toThrow();
+  config.packerGranularities = [200, 301.1];
   await expect(config.validate()).rejects.toThrow();
 });
 

@@ -13,6 +13,7 @@ import {
 import { RawChainConfig } from './chain';
 import { RawCircuitConfig } from './circuit';
 import { RawIndexerConfig } from './indexer';
+import { RawPackerConfig } from './packer';
 
 export type RawBridgeConfigType =
   | RawAxelarBridgeConfig
@@ -67,6 +68,12 @@ export class RawMystikoConfig extends RawConfig {
   @IsOptional()
   @ValidateNested()
   public indexer?: RawIndexerConfig = undefined;
+
+  @Expose()
+  @Type(() => RawPackerConfig)
+  @IsOptional()
+  @ValidateNested()
+  public packer?: RawPackerConfig = undefined;
 
   @Expose()
   @IsArray()

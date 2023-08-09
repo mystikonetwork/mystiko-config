@@ -1,0 +1,7 @@
+{
+  "url": "https://static.mystiko.network/packer/v2",
+  "version": 2,
+  "clientTimeoutMs": 10000,
+  "checksum": "sha512",
+  "compression": "zstd"
+}

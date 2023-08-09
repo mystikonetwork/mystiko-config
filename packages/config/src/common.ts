@@ -52,6 +52,14 @@ export enum ProviderType {
   FAILOVER = 'failover',
 }
 
+export enum PackerChecksum {
+  SHA512 = 'sha512',
+}
+
+export enum PackerCompression {
+  ZSTD = 'zstd',
+}
+
 /**
  * @function module:mystiko/models.isValidBridgeType
  * @desc check whether given type is one of the supported bridge types.
