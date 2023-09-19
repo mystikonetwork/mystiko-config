@@ -259,6 +259,11 @@
   "indexer": {
     "url": "https://example.com"
   },
+  "sequencer": {
+    "host": "example.com",
+    "port": 50051,
+    "isSsl": true
+  },
   "packer": {
     "url": "https://static.mystiko.network/packer/v1"
   },

@@ -1,0 +1,5 @@
+{
+  "host": "invalid host name",
+  "port": 50051,
+  "isSsl": true
+}
