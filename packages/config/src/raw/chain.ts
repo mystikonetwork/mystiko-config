@@ -100,6 +100,11 @@ export class RawChainConfig extends RawConfig {
   public indexerFilterSize: number = 500000;
 
   @Expose()
+  @IsInt()
+  @IsPositive()
+  public sequencerFetchSize: number = 500000;
+
+  @Expose()
   @Type(() => RawDepositContractConfig)
   @ValidateNested()
   @IsArray()
