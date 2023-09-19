@@ -1,0 +1,5 @@
+{
+  "host": "example.com",
+  "port": 50051,
+  "isSsl": true
+}

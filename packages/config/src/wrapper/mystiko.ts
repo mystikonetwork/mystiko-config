@@ -22,6 +22,7 @@ import { CircuitConfig } from './circuit';
 import { DepositContractConfig, PoolContractConfig } from './contract';
 import { IndexerConfig } from './indexer';
 import { PackerConfig } from './packer';
+import { SequencerConfig } from './sequencer';
 
 export type BridgeConfigType =
   | AxelarBridgeConfig
@@ -50,6 +51,8 @@ export class MystikoConfig extends BaseConfig<RawMystikoConfig> {
 
   private readonly indexerConfig: IndexerConfig | undefined;
 
+  private readonly sequencerConfig: SequencerConfig | undefined;
+
   private readonly packerConfig: PackerConfig | undefined;
 
   protected constructor(data: RawMystikoConfig) {
@@ -60,6 +63,7 @@ export class MystikoConfig extends BaseConfig<RawMystikoConfig> {
     this.bridgeConfigs = this.initBridgeConfigs();
     this.chainConfigs = this.initChainConfigs(defaultCircuitConfigs, circuitConfigsByName);
     this.indexerConfig = data.indexer ? new IndexerConfig(data.indexer) : undefined;
+    this.sequencerConfig = data.sequencer ? new SequencerConfig(data.sequencer) : undefined;
     this.packerConfig = data.packer ? new PackerConfig(data.packer) : undefined;
     this.validate();
   }
@@ -86,6 +90,10 @@ export class MystikoConfig extends BaseConfig<RawMystikoConfig> {
 
   public get indexer(): IndexerConfig | undefined {
     return this.indexerConfig;
+  }
+
+  public get sequencer(): SequencerConfig | undefined {
+    return this.sequencerConfig;
   }
 
   public get packer(): PackerConfig | undefined {

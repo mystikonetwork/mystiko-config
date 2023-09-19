@@ -8,3 +8,4 @@ export * from './indexer';
 export * from './mystiko';
 export * from './packer';
 export * from './provider';
+export * from './sequencer';

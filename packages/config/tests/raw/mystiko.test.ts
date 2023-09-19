@@ -50,6 +50,16 @@ test('test invalid indexer', async () => {
   }
 });
 
+test('test invalid sequencer', async () => {
+  const sequencerConfig = config.sequencer;
+  if (sequencerConfig) {
+    sequencerConfig.host = 'not a host';
+    await expect(config.validate()).rejects.toThrow();
+  } else {
+    throw new Error('sequencer config should not be undefined');
+  }
+});
+
 test('test invalid packer', async () => {
   const packerConfig = config.packer;
   if (packerConfig) {

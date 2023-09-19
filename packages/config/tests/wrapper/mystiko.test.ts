@@ -10,6 +10,7 @@ import {
   RawIndexerConfig,
   RawMystikoConfig,
   RawPackerConfig,
+  RawSequencerConfig,
   RawTBridgeConfig,
 } from '../../src';
 
@@ -386,6 +387,15 @@ test('test get indexer config', async () => {
   rawConfig.indexer = await RawConfig.createFromFile(RawIndexerConfig, 'tests/files/indexer.valid.json');
   config = await MystikoConfig.createFromRaw(rawConfig);
   expect(config.indexer?.url).toBe('https://example.com');
+});
+
+test('test get sequencer config', async () => {
+  rawConfig.sequencer = await RawConfig.createFromFile(
+    RawSequencerConfig,
+    'tests/files/sequencer.valid.json',
+  );
+  config = await MystikoConfig.createFromRaw(rawConfig);
+  expect(config.sequencer?.host).toBe('example.com');
 });
 
 test('test get packer config', async () => {
