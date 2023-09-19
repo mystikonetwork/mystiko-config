@@ -110,6 +110,10 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
     return this.data.indexerFilterSize;
   }
 
+  public get sequencerFetchSize(): number {
+    return this.data.sequencerFetchSize;
+  }
+
   public get poolContracts(): PoolContractConfig[] {
     return Array.from(this.poolContractConfigs.values());
   }

@@ -10,6 +10,7 @@
   "eventFilterBlockBackoff": 200,
   "eventFilterSize": 1000,
   "indexerFilterSize": 10000,
+  "sequencerFetchSize": 20000,
   "providers": [
     {
       "url": "wss://ropsten.infura.io/ws/v3/9aa3d95b3bc440fa88ea12eaa4456161",

@@ -85,6 +85,7 @@ beforeEach(async () => {
     eventFilterBlockBackoff: 200,
     eventFilterSize: 1000,
     indexerFilterSize: 10000,
+    sequencerFetchSize: 20000,
     providers: [providerConfig],
     providerType: ProviderType.QUORUM,
     providerQuorumPercentage: 80,
@@ -178,6 +179,13 @@ test('test invalid indexerFilterSize', async () => {
   config.indexerFilterSize = 0;
   await expect(config.validate()).rejects.toThrow();
   config.indexerFilterSize = 2.3;
+  await expect(config.validate()).rejects.toThrow();
+});
+
+test('test invalid sequencerFetchSize', async () => {
+  config.sequencerFetchSize = 0;
+  await expect(config.validate()).rejects.toThrow();
+  config.sequencerFetchSize = 2.3;
   await expect(config.validate()).rejects.toThrow();
 });
 
