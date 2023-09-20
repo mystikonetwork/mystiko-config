@@ -11,19 +11,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
+          token: ${{ secrets.PACKAGES_TOKEN }}
           lfs: true
-      - uses: actions/setup-node@v2
+          submodules: recursive
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
-          node-version: 14
-      - run: echo "@mystikonetwork:registry=https://npm.pkg.github.com" >> $HOME/.npmrc
-      - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.PACKAGES_TOKEN }}" >> $HOME/.npmrc
-      - run: npm install --global lerna@6.6.2
-      - run: lerna bootstrap
-      - run: lerna run build
-      - run: lerna run lint
-      - run: lerna run test
+          node-version: 18
+      - name: Setup Registry
+        run: |
+          echo "@mystikonetwork:registry=https://npm.pkg.github.com" >> $HOME/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.PACKAGES_TOKEN }}" >> $HOME/.npmrc
+      - name: Install Dependencies
+        run: yarn install
+      - name: Lint
+        run: yarn lint
+      - name: Build
+        run: yarn build
+      - name: Test
+        run: yarn test
       - run: git diff --quiet || (echo "some generated files are not included in repo" && exit 1)
       - uses: codecov/codecov-action@v2
         with:

@@ -1,2 +1,2 @@
-## Mystiko Typescript Configuration Library
-The typescript configuration library for [Mystiko.Network](https://mystiko.network).
+## @mystikonetwork/config
+This package contains all configuration related files and modules.
