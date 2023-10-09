@@ -31,6 +31,14 @@ export class ContractConfig<T extends RawContractConfig, A = {}> extends BaseCon
     return this.data.indexerFilterSize;
   }
 
+  public get disabledAt(): number | undefined {
+    return this.data.disabledAt;
+  }
+
+  public get disabled(): boolean {
+    return !!this.disabledAt;
+  }
+
   public mutate(data?: T, auxData?: A): ContractConfig<T, A> {
     return new ContractConfig<T, A>(data || this.data, auxData || this.auxData);
   }

@@ -27,6 +27,12 @@ export class RawContractConfig extends RawConfig {
   public address: string;
 
   @Expose()
+  @IsInt()
+  @IsPositive()
+  @IsOptional()
+  public disabledAt?: number = undefined;
+
+  @Expose()
   @IsEnum(ContractType)
   public type: ContractType;
 

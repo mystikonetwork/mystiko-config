@@ -9,6 +9,7 @@ beforeEach(async () => {
     address: '0x961f315a836542e603a3df2e0dd9d4ecd06ebc67',
     type: ContractType.DEPOSIT,
     startBlock: 1000000,
+    disabledAt: 1001000,
     eventFilterSize: 10000,
     indexerFilterSize: 100000,
   });
@@ -35,6 +36,13 @@ test('test invalid address', async () => {
   config.address = '0xdeadbeef';
   await expect(config.validate()).rejects.toThrow();
   config.address = '';
+  await expect(config.validate()).rejects.toThrow();
+});
+
+test('test invalid disabledAt', async () => {
+  config.disabledAt = 0;
+  await expect(config.validate()).rejects.toThrow();
+  config.disabledAt = 0.1;
   await expect(config.validate()).rejects.toThrow();
 });
 

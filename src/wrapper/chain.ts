@@ -119,11 +119,11 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
   }
 
   public get depositContracts(): DepositContractConfig[] {
-    return this.depositContractsWithDisabled.filter((conf) => !conf.disabled);
+    return Array.from(this.depositContractConfigs.values());
   }
 
-  public get depositContractsWithDisabled(): DepositContractConfig[] {
-    return Array.from(this.depositContractConfigs.values());
+  public get depositContractsWithoutDisabled(): DepositContractConfig[] {
+    return this.depositContracts.filter((conf) => !conf.disabled);
   }
 
   public get assets(): AssetConfig[] {
@@ -141,14 +141,14 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
   public get startBlock(): number {
     const startBlocks = [
       ...this.poolContracts.map((config) => config.startBlock),
-      ...this.depositContractsWithDisabled.map((config) => config.startBlock),
+      ...this.depositContracts.map((config) => config.startBlock),
     ];
     return startBlocks.length === 0 ? 0 : Math.min(...startBlocks);
   }
 
   public get peerChainIds(): number[] {
     const chainIds = new Set<number>();
-    this.depositContracts.forEach((depositContractConfig) => {
+    this.depositContractsWithoutDisabled.forEach((depositContractConfig) => {
       if (depositContractConfig.bridgeType === BridgeType.LOOP) {
         chainIds.add(this.chainId);
       } else if (depositContractConfig.peerChainId) {
@@ -160,7 +160,7 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
 
   public getAssetSymbols(peerChainId: number): string[] {
     const assetSymbols: Set<string> = new Set<string>();
-    this.depositContracts.forEach((depositContractConfig) => {
+    this.depositContractsWithoutDisabled.forEach((depositContractConfig) => {
       if (peerChainId === this.chainId) {
         if (depositContractConfig.bridgeType === BridgeType.LOOP) {
           assetSymbols.add(depositContractConfig.assetSymbol);
@@ -176,7 +176,7 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
 
   public getBridges(peerChainId: number, assetSymbol: string): BridgeType[] {
     const bridges: Set<BridgeType> = new Set<BridgeType>();
-    this.depositContracts.forEach((depositContractConfig) => {
+    this.depositContractsWithoutDisabled.forEach((depositContractConfig) => {
       if (peerChainId !== this.chainId && depositContractConfig.assetSymbol === assetSymbol) {
         if (peerChainId === depositContractConfig.peerChainId) {
           bridges.add(depositContractConfig.bridgeType);
@@ -191,9 +191,9 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
     assetSymbol: string,
     bridgeType: BridgeType,
   ): DepositContractConfig | undefined {
-    const { depositContracts } = this;
-    for (let i = 0; i < depositContracts.length; i += 1) {
-      const depositContractConfig = depositContracts[i];
+    const { depositContractsWithoutDisabled } = this;
+    for (let i = 0; i < depositContractsWithoutDisabled.length; i += 1) {
+      const depositContractConfig = depositContractsWithoutDisabled[i];
       if (
         depositContractConfig.assetSymbol === assetSymbol &&
         depositContractConfig.bridgeType === bridgeType
