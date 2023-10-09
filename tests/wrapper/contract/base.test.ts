@@ -13,6 +13,8 @@ test('test equality', () => {
   expect(config.address).toBe(rawConfig.address);
   expect(config.name).toBe(rawConfig.name);
   expect(config.type).toBe(rawConfig.type);
+  expect(config.disabled).toBe(true);
+  expect(config.disabledAt).toBe(1001000);
   expect(config.startBlock).toBe(rawConfig.startBlock);
   expect(config.eventFilterSize).toBe(rawConfig.eventFilterSize);
   expect(config.indexerFilterSize).toBe(rawConfig.indexerFilterSize);

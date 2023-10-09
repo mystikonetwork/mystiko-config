@@ -1,7 +1,6 @@
 import { Expose } from 'class-transformer';
 import {
   Equals,
-  IsBoolean,
   IsEnum,
   IsEthereumAddress,
   IsInt,
@@ -25,10 +24,6 @@ export class RawDepositContractConfig extends RawContractConfig {
   @Expose()
   @IsEthereumAddress()
   public poolAddress: string;
-
-  @Expose()
-  @IsBoolean()
-  public disabled: boolean = false;
 
   @Expose()
   @IsInt()

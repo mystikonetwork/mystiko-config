@@ -303,7 +303,7 @@ export class MystikoConfig extends BaseConfig<RawMystikoConfig> {
 
   private validate() {
     this.chainConfigs.forEach((chainConfig) => {
-      chainConfig.depositContractsWithDisabled.forEach((depositContractConfig) => {
+      chainConfig.depositContracts.forEach((depositContractConfig) => {
         if (depositContractConfig.bridgeType !== BridgeType.LOOP) {
           check(
             this.bridgeConfigs.has(depositContractConfig.bridgeType),

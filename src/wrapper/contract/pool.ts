@@ -131,5 +131,11 @@ export class PoolContractConfig extends ContractConfig<RawPoolContractConfig, Au
           `when asset type=${this.assetType}`,
       );
     }
+    if (this.disabledAt) {
+      check(
+        this.disabledAt > this.startBlock,
+        `pool contract=${this.address} disabledAt should be greater than startBlock`,
+      );
+    }
   }
 }

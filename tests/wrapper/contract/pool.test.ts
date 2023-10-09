@@ -108,6 +108,13 @@ test('test assetAddress is not found', () => {
   );
 });
 
+test('test invalid disabledAt', () => {
+  rawConfig.disabledAt = 1;
+  expect(() => config.mutate(rawConfig)).toThrow(
+    `pool contract=${config.address} disabledAt should be greater than startBlock`,
+  );
+});
+
 test('test circuit overwrite', () => {
   expect(config.getCircuitConfig(CircuitType.ROLLUP1)?.name).toBe('zokrates-1.0-rollup1');
   rawConfig.circuits = ['zokrates-2.0-rollup1'];

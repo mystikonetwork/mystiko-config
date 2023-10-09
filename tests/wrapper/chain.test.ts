@@ -64,9 +64,9 @@ test('test equality', () => {
   expect(config.poolContracts.map((conf) => conf.address).sort()).toStrictEqual(
     rawConfig.poolContracts.map((conf) => conf.address).sort(),
   );
-  expect(config.depositContracts.length).toBe(0);
-  expect(config.depositContractsWithDisabled.length).toBe(rawConfig.depositContracts.length);
-  expect(config.depositContractsWithDisabled.map((conf) => conf.address).sort()).toStrictEqual(
+  expect(config.depositContractsWithoutDisabled.length).toBe(0);
+  expect(config.depositContracts.length).toBe(rawConfig.depositContracts.length);
+  expect(config.depositContracts.map((conf) => conf.address).sort()).toStrictEqual(
     rawConfig.depositContracts.map((conf) => conf.address).sort(),
   );
   expect(config.assets.length).toBe(1);
@@ -77,7 +77,7 @@ test('test equality', () => {
 
 test('test peerChainIds', async () => {
   expect(config.peerChainIds).toStrictEqual([]);
-  rawConfig.depositContracts[0].disabled = false;
+  rawConfig.depositContracts[0].disabledAt = undefined;
   config = new ChainConfig(rawConfig, {
     defaultCircuitConfigs,
     circuitConfigsByName,
@@ -121,7 +121,7 @@ test('test peerChainIds', async () => {
 
 test('test getAssetSymbols', async () => {
   expect(config.getAssetSymbols(97)).toStrictEqual([]);
-  rawConfig.depositContracts[0].disabled = false;
+  rawConfig.depositContracts[0].disabledAt = undefined;
   config = new ChainConfig(rawConfig, {
     defaultCircuitConfigs,
     circuitConfigsByName,
@@ -193,7 +193,7 @@ test('test getAssetSymbols', async () => {
 
 test('test getBridges', async () => {
   expect(config.getBridges(97, 'MTT')).toStrictEqual([]);
-  rawConfig.depositContracts[0].disabled = false;
+  rawConfig.depositContracts[0].disabledAt = undefined;
   config = new ChainConfig(rawConfig, {
     defaultCircuitConfigs,
     circuitConfigsByName,
@@ -386,7 +386,7 @@ test('test getPoolContract', async () => {
   rawConfig.poolContracts.push(poolContractConfig2);
   rawConfig.depositContracts.push(tbridgeDepositContractConfig);
   rawConfig.depositContracts.push(loopDepositContractConfig);
-  rawConfig.depositContracts[0].disabled = false;
+  rawConfig.depositContracts[0].disabledAt = 1001000;
   config = new ChainConfig(rawConfig, {
     defaultCircuitConfigs,
     circuitConfigsByName,
@@ -517,7 +517,7 @@ test('test duplicate bridge and asset', async () => {
   });
   rawConfig.poolContracts.push(poolContractConfig);
   rawConfig.depositContracts.push(tbridgeDepositContractConfig);
-  rawConfig.depositContracts[0].disabled = false;
+  rawConfig.depositContracts[0].disabledAt = 1001000;
   expect(
     () =>
       new ChainConfig(rawConfig, {
@@ -534,7 +534,7 @@ test('test duplicate bridge and asset', async () => {
 
 test('test different bridge with same pool address', async () => {
   expect(config.peerChainIds).toStrictEqual([]);
-  rawConfig.depositContracts[0].disabled = false;
+  rawConfig.depositContracts[0].disabledAt = undefined;
   config = new ChainConfig(rawConfig, {
     defaultCircuitConfigs,
     circuitConfigsByName,

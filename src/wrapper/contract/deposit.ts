@@ -42,10 +42,6 @@ export class DepositContractConfig extends ContractConfig<RawDepositContractConf
     throw new Error(`no poolContract definition found for deposit contract=${this.address}`);
   }
 
-  public get disabled(): boolean {
-    return this.data.disabled;
-  }
-
   public get minAmount(): BN {
     return toBN(this.data.minAmount);
   }
@@ -185,6 +181,12 @@ export class DepositContractConfig extends ContractConfig<RawDepositContractConf
         !!this.peerContractAddress,
         `deposit contract=${this.address} peerContractAddress should not be undefined ` +
           `when bridge type=${this.bridgeType}`,
+      );
+    }
+    if (this.disabledAt) {
+      check(
+        this.disabledAt > this.startBlock,
+        `deposit contract=${this.address} disabledAt should be greater than startBlock`,
       );
     }
   }

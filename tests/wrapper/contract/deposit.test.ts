@@ -68,7 +68,6 @@ beforeEach(async () => {
 test('test equality', () => {
   expect(config.bridgeType).toBe(rawConfig.bridgeType);
   expect(config.poolAddress).toBe(rawConfig.poolAddress);
-  expect(config.disabled).toBe(rawConfig.disabled);
   expect(config.minAmount.toString()).toBe(rawConfig.minAmount);
   expect(config.minAmountNumber).toBe(1);
   expect(config.maxAmount.toString()).toBe(rawConfig.maxAmount);
@@ -214,6 +213,13 @@ test('test invalid maxAmount', () => {
   rawConfig.maxAmount = '10000';
   expect(() => config.mutate(rawConfig)).toThrow(
     `deposit contract=${config.address} maxAmount is less than minAmount`,
+  );
+});
+
+test('test invalid disabledAt', () => {
+  rawConfig.disabledAt = 1;
+  expect(() => config.mutate(rawConfig)).toThrow(
+    `deposit contract=${config.address} disabledAt should be greater than startBlock`,
   );
 });
 

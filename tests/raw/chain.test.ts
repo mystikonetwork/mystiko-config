@@ -34,7 +34,7 @@ function initDepositContractConfig(): Promise<RawDepositContractConfig> {
     startBlock: 1000000,
     bridgeType: BridgeType.TBRIDGE,
     poolAddress: '0xF55Dbe8D71Df9Bbf5841052C75c6Ea9eA717fc6d',
-    disabled: true,
+    disabledAt: 1001000,
     peerChainId: 97,
     peerContractAddress: '0x98bF2d9e3bA2A8515E660BD4104432ce3e2D7547',
     minAmount: '10000000000000000',
