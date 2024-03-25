@@ -82,7 +82,7 @@ beforeEach(async () => {
     explorerUrl: 'https://ropsten.etherscan.io',
     explorerApiUrl: 'https://api-ropsten.etherscan.io',
     explorerPrefix: '/tx/%tx%',
-    eventFilterBlockBackoff: 200,
+    eventDelayBlocks: 200,
     eventFilterSize: 1000,
     indexerFilterSize: 10000,
     sequencerFetchSize: 20000,
@@ -161,10 +161,10 @@ test('test invalid signerEndpoint', async () => {
   await expect(config.validate()).rejects.toThrow();
 });
 
-test('test invalid eventFilterBlockBackoff', async () => {
-  config.eventFilterBlockBackoff = -1;
+test('test invalid eventDelayBlocks', async () => {
+  config.eventDelayBlocks = -1;
   await expect(config.validate()).rejects.toThrow();
-  config.eventFilterBlockBackoff = 2.3;
+  config.eventDelayBlocks = 2.3;
   await expect(config.validate()).rejects.toThrow();
 });
 

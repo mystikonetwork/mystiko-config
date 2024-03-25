@@ -98,8 +98,8 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
     return this.data.signerEndpoint;
   }
 
-  public get eventFilterBlockBackoff(): number {
-    return this.data.eventFilterBlockBackoff;
+  public get eventDelayBlocks(): number {
+    return this.data.eventDelayBlocks;
   }
 
   public get eventFilterSize(): number {

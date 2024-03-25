@@ -53,7 +53,7 @@ test('test equality', () => {
   expect(config.explorerApiUrl).toBe(rawConfig.explorerApiUrl);
   expect(config.explorerPrefix).toBe(rawConfig.explorerPrefix);
   expect(config.signerEndpoint).toBe(rawConfig.signerEndpoint);
-  expect(config.eventFilterBlockBackoff).toBe(rawConfig.eventFilterBlockBackoff);
+  expect(config.eventDelayBlocks).toBe(rawConfig.eventDelayBlocks);
   expect(config.eventFilterSize).toBe(rawConfig.eventFilterSize);
   expect(config.indexerFilterSize).toBe(rawConfig.indexerFilterSize);
   expect(config.sequencerFetchSize).toBe(rawConfig.sequencerFetchSize);
