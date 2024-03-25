@@ -87,7 +87,7 @@ export class RawChainConfig extends RawConfig {
   @Expose()
   @IsInt()
   @Min(0)
-  public eventFilterBlockBackoff: number = 0;
+  public eventDelayBlocks: number = 0;
 
   @Expose()
   @IsInt()
