@@ -214,7 +214,7 @@ test('test invalid assets', async () => {
 });
 
 test('test invalid providerQuorumPercentage', async () => {
-  config.providerQuorumPercentage = 49;
+  config.providerQuorumPercentage = 29;
   await expect(config.validate()).rejects.toThrow();
   config.providerQuorumPercentage = 101;
   await expect(config.validate()).rejects.toThrow();
