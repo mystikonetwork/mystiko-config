@@ -76,7 +76,7 @@ export class RawChainConfig extends RawConfig {
 
   @Expose()
   @IsInt()
-  @Min(50)
+  @Min(30)
   @Max(100)
   public providerQuorumPercentage: number = 50;
 
