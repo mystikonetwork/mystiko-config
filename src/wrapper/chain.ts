@@ -114,6 +114,10 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
     return this.data.sequencerFetchSize;
   }
 
+  public get safeConfirmations(): number | undefined {
+    return this.data.safeConfirmations;
+  }
+
   public get poolContracts(): PoolContractConfig[] {
     return Array.from(this.poolContractConfigs.values());
   }

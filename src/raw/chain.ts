@@ -8,6 +8,7 @@ import {
   IsInt,
   IsNotEmpty,
   IsNumberString,
+  IsOptional,
   IsPositive,
   IsString,
   IsUrl,
@@ -103,6 +104,12 @@ export class RawChainConfig extends RawConfig {
   @IsInt()
   @IsPositive()
   public sequencerFetchSize: number = 500000;
+
+  @Expose()
+  @IsInt()
+  @IsPositive()
+  @IsOptional()
+  public safeConfirmations?: number;
 
   @Expose()
   @Type(() => RawDepositContractConfig)

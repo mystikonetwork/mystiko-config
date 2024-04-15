@@ -57,6 +57,7 @@ test('test equality', () => {
   expect(config.eventFilterSize).toBe(rawConfig.eventFilterSize);
   expect(config.indexerFilterSize).toBe(rawConfig.indexerFilterSize);
   expect(config.sequencerFetchSize).toBe(rawConfig.sequencerFetchSize);
+  expect(config.safeConfirmations).toBe(rawConfig.safeConfirmations);
   expect(config.providers).toStrictEqual(rawConfig.providers.map((raw) => new ProviderConfig(raw)));
   expect(config.providerType).toBe(rawConfig.providerType);
   expect(config.providerQuorumPercentage).toBe(rawConfig.providerQuorumPercentage);
