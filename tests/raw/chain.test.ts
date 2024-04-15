@@ -86,6 +86,7 @@ beforeEach(async () => {
     eventFilterSize: 1000,
     indexerFilterSize: 10000,
     sequencerFetchSize: 20000,
+    safeConfirmations: 10,
     providers: [providerConfig],
     providerType: ProviderType.QUORUM,
     providerQuorumPercentage: 80,
@@ -186,6 +187,15 @@ test('test invalid sequencerFetchSize', async () => {
   config.sequencerFetchSize = 0;
   await expect(config.validate()).rejects.toThrow();
   config.sequencerFetchSize = 2.3;
+  await expect(config.validate()).rejects.toThrow();
+});
+
+test('test invalid safeConfirmations', async () => {
+  config.safeConfirmations = 1.1;
+  await expect(config.validate()).rejects.toThrow();
+  config.safeConfirmations = 0;
+  await expect(config.validate()).rejects.toThrow();
+  config.safeConfirmations = -1;
   await expect(config.validate()).rejects.toThrow();
 });
 
