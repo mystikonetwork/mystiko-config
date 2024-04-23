@@ -424,6 +424,60 @@
       "verifyingKeyFile": ["./Rollup16.vkey.gz"]
     },
     {
+      "name": "zokrates-1.0-rollup32",
+      "type": "rollup32",
+      "isDefault": true,
+      "programFile": ["./Rollup32.program.gz"],
+      "abiFile": ["./Rollup32.abi.json"],
+      "provingKeyFile": ["./Rollup32.pkey.gz"],
+      "verifyingKeyFile": ["./Rollup32.vkey.gz"]
+    },
+    {
+      "name": "zokrates-1.0-rollup64",
+      "type": "rollup64",
+      "isDefault": true,
+      "programFile": ["./Rollup64.program.gz"],
+      "abiFile": ["./Rollup64.abi.json"],
+      "provingKeyFile": ["./Rollup64.pkey.gz"],
+      "verifyingKeyFile": ["./Rollup64.vkey.gz"]
+    },
+    {
+      "name": "zokrates-1.0-rollup128",
+      "type": "rollup128",
+      "isDefault": true,
+      "programFile": ["./Rollup128.program.gz"],
+      "abiFile": ["./Rollup128.abi.json"],
+      "provingKeyFile": ["./Rollup128.pkey.gz"],
+      "verifyingKeyFile": ["./Rollup128.vkey.gz"]
+    },
+    {
+      "name": "zokrates-1.0-rollup256",
+      "type": "rollup256",
+      "isDefault": true,
+      "programFile": ["./Rollup256.program.gz"],
+      "abiFile": ["./Rollup256.abi.json"],
+      "provingKeyFile": ["./Rollup256.pkey.gz"],
+      "verifyingKeyFile": ["./Rollup256.vkey.gz"]
+    },
+    {
+      "name": "zokrates-1.0-rollup512",
+      "type": "rollup512",
+      "isDefault": true,
+      "programFile": ["./Rollup512.program.gz"],
+      "abiFile": ["./Rollup512.abi.json"],
+      "provingKeyFile": ["./Rollup512.pkey.gz"],
+      "verifyingKeyFile": ["./Rollup512.vkey.gz"]
+    },
+    {
+      "name": "zokrates-1.0-rollup1024",
+      "type": "rollup1024",
+      "isDefault": true,
+      "programFile": ["./Rollup1024.program.gz"],
+      "abiFile": ["./Rollup1024.abi.json"],
+      "provingKeyFile": ["./Rollup1024.pkey.gz"],
+      "verifyingKeyFile": ["./Rollup1024.vkey.gz"]
+    },
+    {
       "name": "zokrates-1.0-transaction1x0",
       "type": "transaction1x0",
       "isDefault": true,
