@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { IsArray, IsBoolean, IsEnum, IsNotEmpty, IsString } from 'class-validator';
+import { IsArray, IsBoolean, IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { CircuitType } from '../common';
 import { RawConfig } from './base';
 
@@ -24,10 +24,20 @@ export class RawCircuitConfig extends RawConfig {
   public programFile: string[];
 
   @Expose()
+  @IsString()
+  @IsOptional()
+  public programFileChecksum?: string;
+
+  @Expose()
   @IsArray()
   @IsString({ each: true })
   @IsNotEmpty({ each: true })
   public abiFile: string[];
+
+  @Expose()
+  @IsString()
+  @IsOptional()
+  public abiFileChecksum?: string;
 
   @Expose()
   @IsArray()
@@ -36,8 +46,18 @@ export class RawCircuitConfig extends RawConfig {
   public provingKeyFile: string[];
 
   @Expose()
+  @IsString()
+  @IsOptional()
+  public provingKeyFileChecksum?: string;
+
+  @Expose()
   @IsArray()
   @IsString({ each: true })
   @IsNotEmpty({ each: true })
   public verifyingKeyFile: string[];
+
+  @Expose()
+  @IsString()
+  @IsOptional()
+  public verifyingKeyFileChecksum?: string;
 }
