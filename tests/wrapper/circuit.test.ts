@@ -13,9 +13,13 @@ test('test equality', () => {
   expect(config.type).toBe(rawConfig.type);
   expect(config.isDefault).toBe(rawConfig.isDefault);
   expect(config.programFile).toStrictEqual(rawConfig.programFile);
+  expect(config.programFileChecksum).toBe(rawConfig.programFileChecksum);
   expect(config.abiFile).toStrictEqual(rawConfig.abiFile);
+  expect(config.abiFileChecksum).toBe(rawConfig.abiFileChecksum);
   expect(config.provingKeyFile).toStrictEqual(rawConfig.provingKeyFile);
+  expect(config.provingKeyFileChecksum).toBe(rawConfig.provingKeyFileChecksum);
   expect(config.verifyingKeyFile).toStrictEqual(rawConfig.verifyingKeyFile);
+  expect(config.verifyingKeyFileChecksum).toBe(rawConfig.verifyingKeyFileChecksum);
 });
 
 test('test copy', () => {

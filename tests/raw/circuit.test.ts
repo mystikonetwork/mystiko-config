@@ -8,9 +8,13 @@ beforeEach(async () => {
     type: CircuitType.ROLLUP1,
     isDefault: true,
     programFile: ['./Rollup1.program.gz'],
+    programFileChecksum: 'ff',
     abiFile: ['./Rollup1.abi.json'],
+    abiFileChecksum: 'ee',
     provingKeyFile: ['./Rollup1.pkey.gz'],
+    provingKeyFileChecksum: 'dd',
     verifyingKeyFile: ['./Rollup1.vkey.gz'],
+    verifyingKeyFileChecksum: 'cc',
   });
 });
 
