@@ -321,5 +321,8 @@
   "packer": {
     "url": "https://static.mystiko.network/packer/v1"
   },
+  "screening": {
+    "url": "https://screening.mystiko.network"
+  },
   "countryBlacklist": ["US", "CN"]
 }

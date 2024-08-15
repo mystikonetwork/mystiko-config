@@ -5,7 +5,7 @@ import { RawConfig } from './base';
 export class RawScreeningConfig extends RawConfig {
   @Expose()
   @IsUrl({ protocols: ['http', 'https'], require_tld: false })
-  public url: string;
+  public url: string = 'https://screening.mystiko.network';
 
   @Expose()
   @IsInt()

@@ -14,6 +14,11 @@ export class ScreeningConfig extends BaseConfig<RawScreeningConfig> {
     return this.data.version;
   }
 
+  public static default(): ScreeningConfig {
+    const defaultData = new RawScreeningConfig();
+    return new ScreeningConfig(defaultData);
+  }
+
   public mutate(data?: RawScreeningConfig): ScreeningConfig {
     return new ScreeningConfig(data || this.data);
   }

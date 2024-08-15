@@ -404,6 +404,17 @@ test('test get packer config', async () => {
   expect(config.packer?.url).toBe('https://static.mystiko.network/packer/v2');
 });
 
+test('test get screening config', async () => {
+  config = await MystikoConfig.createFromRaw(rawConfig);
+  expect(config.screening?.url).toBe('https://screening.mystiko.network');
+  expect(config.screening?.version).toBe(1);
+
+  const validRawConfig = await RawConfig.createFromFile(RawMystikoConfig, 'tests/files/mystiko.valid.json');
+  const validaConfig = await MystikoConfig.createFromRaw(validRawConfig);
+  expect(validaConfig.screening?.url).toBe('https://screening.mystiko.network');
+  expect(validaConfig.screening?.version).toBe(1);
+});
+
 test('test mutate', () => {
   expect(config.mutate().copyData()).toStrictEqual(rawConfig);
   rawConfig.version = '1.1.1';
