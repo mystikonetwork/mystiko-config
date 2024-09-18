@@ -24,6 +24,10 @@ export class AssetConfig extends BaseConfig<RawAssetConfig> {
     return this.data.assetSymbol;
   }
 
+  public get assetSymbolAlias(): string[] {
+    return this.data.assetSymbolAlias;
+  }
+
   public get assetDecimals(): number {
     return this.data.assetDecimals;
   }
@@ -45,6 +49,9 @@ export class AssetConfig extends BaseConfig<RawAssetConfig> {
       (this.assetType !== AssetType.MAIN && this.assetAddress !== MAIN_ASSET_ADDRESS) ||
         (this.assetType === AssetType.MAIN && this.assetAddress === MAIN_ASSET_ADDRESS),
       `wrong asset address=${this.assetAddress} and type=${this.assetType}`,
+    );
+    this.assetSymbolAlias.forEach((symbol) =>
+      check(symbol !== this.assetSymbol, `wrong alias asset symbol=${symbol}`),
     );
   }
 }

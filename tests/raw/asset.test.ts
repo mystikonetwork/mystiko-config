@@ -17,6 +17,11 @@ test('test invalid assetSymbol', async () => {
   await expect(config.validate()).rejects.toThrow();
 });
 
+test('test invalid assetSymbolAlias', async () => {
+  config.assetSymbolAlias = ['ETH', 'ETH'];
+  await expect(config.validate()).rejects.toThrow();
+});
+
 test('test invalid assetDecimals', async () => {
   config.assetDecimals = -1;
   await expect(config.validate()).rejects.toThrow();

@@ -45,6 +45,7 @@ beforeEach(async () => {
   mainAssetConfig = new AssetConfig({
     assetType: AssetType.MAIN,
     assetSymbol: rawMystikoConfig.chains[0].assetSymbol,
+    assetSymbolAlias: rawMystikoConfig.chains[0].assetSymbolAlias,
     assetDecimals: rawMystikoConfig.chains[0].assetDecimals,
     assetAddress: '0x0000000000000000000000000000000000000000',
     recommendedAmounts: rawMystikoConfig.chains[0].recommendedAmounts,
@@ -70,6 +71,7 @@ test('test equality', () => {
   expect(config.asset).toStrictEqual(assetConfigs.get('0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a'));
   expect(config.assetType).toBe(config.asset.assetType);
   expect(config.assetSymbol).toBe(config.asset.assetSymbol);
+  expect(config.assetSymbolAlias).toStrictEqual(config.asset.assetSymbolAlias);
   expect(config.assetDecimals).toBe(config.asset.assetDecimals);
   expect(config.assetAddress).toBe(rawConfig.assetAddress);
   expect(config.recommendedAmounts).toStrictEqual(config.asset.recommendedAmounts);
