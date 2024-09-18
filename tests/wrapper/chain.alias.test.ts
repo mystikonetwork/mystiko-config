@@ -15,10 +15,7 @@ let defaultCircuitConfigs: Map<CircuitType, CircuitConfig>;
 let circuitConfigsByName: Map<string, CircuitConfig>;
 
 beforeEach(async () => {
-  rawMystikoConfig = await RawConfig.createFromFile(
-    RawMystikoConfig,
-    'tests/files/mystiko.alias.valid.json',
-  );
+  rawMystikoConfig = await RawConfig.createFromFile(RawMystikoConfig, 'tests/files/mystiko.alias.valid.json');
   circuitConfigsByName = new Map<string, CircuitConfig>();
   defaultCircuitConfigs = new Map<CircuitType, CircuitConfig>();
   rawMystikoConfig.circuits.forEach((rawCircuitConfig) => {
