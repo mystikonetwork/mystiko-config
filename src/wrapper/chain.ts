@@ -58,8 +58,8 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
     return this.mainAssetConfig.assetSymbol;
   }
 
-  public get alliedAssetSymbols(): string[] {
-    return this.mainAssetConfig.alliedAssetSymbols;
+  public get assetSymbolAlias(): string[] {
+    return this.mainAssetConfig.assetSymbolAlias;
   }
 
   public get assetDecimals(): number {
@@ -346,8 +346,8 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
       allVersions.set(poolContractConfig.version, poolContractConfig);
       bridges.set(poolContractConfig.bridgeType, allVersions);
       poolConfigsByAssetAndBridge.set(poolContractConfig.assetSymbol, bridges);
-      poolContractConfig.alliedAssetSymbols.forEach((alliedAssetSymbol) => {
-        poolConfigsByAssetAndBridge.set(alliedAssetSymbol, bridges);
+      poolContractConfig.assetSymbolAlias.forEach((assetSymbolAlias) => {
+        poolConfigsByAssetAndBridge.set(assetSymbolAlias, bridges);
       });
     });
     return poolConfigsByAssetAndBridge;
@@ -358,7 +358,7 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
       assetType: AssetType.MAIN,
       assetSymbol: this.data.assetSymbol,
       assetDecimals: this.data.assetDecimals,
-      alliedAssetSymbols: this.data.alliedAssetSymbols,
+      assetSymbolAlias: this.data.assetSymbolAlias,
       assetAddress: MAIN_ASSET_ADDRESS,
       recommendedAmounts: this.data.recommendedAmounts,
     } as RawAssetConfig);

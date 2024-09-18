@@ -12,15 +12,15 @@ test('test equality', () => {
   expect(config.assetAddress).toBe(rawConfig.assetAddress);
   expect(config.assetType).toBe(rawConfig.assetType);
   expect(config.assetDecimals).toBe(rawConfig.assetDecimals);
-  expect(config.alliedAssetSymbols).toStrictEqual(rawConfig.alliedAssetSymbols);
+  expect(config.assetSymbolAlias).toStrictEqual(rawConfig.assetSymbolAlias);
   expect(config.assetSymbol).toBe(rawConfig.assetSymbol);
   expect(config.recommendedAmounts.map((a) => a.toString())).toStrictEqual(rawConfig.recommendedAmounts);
   expect(config.recommendedAmountsNumber).toStrictEqual([1, 10]);
 });
 
-test('test wrong allied asset symbols', () => {
-  rawConfig.alliedAssetSymbols = ['MTT'];
-  expect(() => new AssetConfig(rawConfig)).toThrow(new Error('wrong allied asset symbol=MTT'));
+test('test wrong alias asset symbols', () => {
+  rawConfig.assetSymbolAlias = ['MTT'];
+  expect(() => new AssetConfig(rawConfig)).toThrow(new Error('wrong alias asset symbol=MTT'));
 });
 
 test('test wrong address or type', () => {

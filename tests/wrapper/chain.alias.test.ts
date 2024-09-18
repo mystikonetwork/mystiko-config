@@ -17,7 +17,7 @@ let circuitConfigsByName: Map<string, CircuitConfig>;
 beforeEach(async () => {
   rawMystikoConfig = await RawConfig.createFromFile(
     RawMystikoConfig,
-    'tests/files/mystiko.allied.valid.json',
+    'tests/files/mystiko.alias.valid.json',
   );
   circuitConfigsByName = new Map<string, CircuitConfig>();
   defaultCircuitConfigs = new Map<CircuitType, CircuitConfig>();
@@ -28,7 +28,7 @@ beforeEach(async () => {
       defaultCircuitConfigs.set(rawCircuitConfig.type, circuitConfig);
     }
   });
-  rawConfig = await RawConfig.createFromFile(RawChainConfig, 'tests/files/chain.allied.valid.json');
+  rawConfig = await RawConfig.createFromFile(RawChainConfig, 'tests/files/chain.alias.valid.json');
   expect(() => new ChainConfig(rawConfig)).toThrow(new Error('auxData has not been specified'));
   config = new ChainConfig(rawConfig, {
     defaultCircuitConfigs,

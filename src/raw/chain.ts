@@ -45,7 +45,7 @@ export class RawChainConfig extends RawConfig {
   @IsArray()
   @ArrayUnique()
   @IsString({ each: true })
-  public alliedAssetSymbols: string[] = [];
+  public assetSymbolAlias: string[] = [];
 
   @Expose()
   @IsInt()
