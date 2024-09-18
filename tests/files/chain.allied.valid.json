@@ -1,0 +1,100 @@
+{
+  "chainId": 3,
+  "name": "Ethereum Ropsten",
+  "assetSymbol": "ETH",
+  "alliedAssetSymbols": ["wETH", "stETH"],
+  "assetDecimals": 18,
+  "recommendedAmounts": ["1000000000000000000", "10000000000000000000"],
+  "explorerUrl": "https://ropsten.etherscan.io",
+  "explorerApiUrl": "https://api-ropsten.etherscan.io",
+  "explorerPrefix": "/tx/%tx%",
+  "eventDelayBlocks": 200,
+  "eventFilterSize": 1000,
+  "indexerFilterSize": 10000,
+  "sequencerFetchSize": 20000,
+  "safeConfirmations": 10,
+  "providers": [
+    {
+      "url": "wss://ropsten.infura.io/ws/v3/9aa3d95b3bc440fa88ea12eaa4456161",
+      "timeoutMs": 5000,
+      "maxTryCount": 5
+    }
+  ],
+  "providerType": "quorum",
+  "providerQuorumPercentage": 80,
+  "signerEndpoint": "https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
+  "depositContracts": [
+    {
+      "version": 2,
+      "name": "MystikoWithPolyERC20",
+      "address": "0x961f315a836542e603a3df2e0dd9d4ecd06ebc67",
+      "type": "deposit",
+      "startBlock": 1000000,
+      "bridgeType": "tbridge",
+      "poolAddress": "0xF55Dbe8D71Df9Bbf5841052C75c6Ea9eA717fc6d",
+      "peerChainId":  97,
+      "peerContractAddress": "0x98bF2d9e3bA2A8515E660BD4104432ce3e2D7547",
+      "minAmount": "10000000000000000",
+      "maxAmount": "100000000000000000",
+      "minBridgeFee": "20000000000000000",
+      "minExecutorFee": "30000000000000000"
+    },
+    {
+      "version": 2,
+      "name": "MystikoWithPolyERC20",
+      "address": "0xd791049D0a154bC7860804e1A18ACD148Eb0afD9",
+      "type": "deposit",
+      "startBlock": 1000000,
+      "bridgeType": "loop",
+      "poolAddress": "0xBe2C9c8a00951662dF3a978b25F448968F0595AE",
+      "minAmount": "10000000000000000",
+      "maxAmount": "100000000000000000"
+    }
+  ],
+  "poolContracts": [
+    {
+      "version": 2,
+      "name": "CommitmentPool",
+      "poolName": "A Pool(since 07/20/2022)",
+      "bridgeType": "tbridge",
+      "address": "0xF55Dbe8D71Df9Bbf5841052C75c6Ea9eA717fc6d",
+      "type": "pool",
+      "startBlock": 1000001,
+      "assetAddress": "0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a",
+      "minRollupFee": "40000000000000000",
+      "circuits": ["circuit-1.0"]
+    },
+    {
+      "version": 2,
+      "name": "CommitmentPool",
+      "poolName": "A Pool(since 07/20/2022)",
+      "bridgeType": "loop",
+      "address": "0xBe2C9c8a00951662dF3a978b25F448968F0595AE",
+      "type": "pool",
+      "startBlock": 1000001,
+      "minRollupFee": "40000000000000000",
+      "circuits": ["circuit-1.0"]
+    },
+    {
+      "version": 3,
+      "name": "CommitmentPool",
+      "poolName": "A Pool(since 07/20/2022)",
+      "bridgeType": "loop",
+      "address": "0xCFC94003081ce7EcdBc43f94A443Cf9fad0F8847",
+      "type": "pool",
+      "startBlock": 1200001,
+      "minRollupFee": "40000000000000000",
+      "circuits": ["circuit-1.0"]
+    }
+  ],
+  "assets": [
+    {
+      "assetType": "erc20",
+      "assetSymbol": "MTT",
+      "alliedAssetSymbols": ["wMTT", "stMTT"],
+      "assetDecimals": 16,
+      "assetAddress": "0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a"
+    }
+  ],
+  "packerGranularities": [32000, 8000, 4000]
+}
