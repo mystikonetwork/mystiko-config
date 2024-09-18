@@ -51,6 +51,10 @@ export class PoolContractConfig extends ContractConfig<RawPoolContractConfig, Au
     return this.asset.assetSymbol;
   }
 
+  public get alliedAssetSymbols(): string[] {
+    return this.asset.alliedAssetSymbols;
+  }
+
   public get assetDecimals(): number {
     return this.asset.assetDecimals;
   }

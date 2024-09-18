@@ -58,6 +58,10 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
     return this.mainAssetConfig.assetSymbol;
   }
 
+  public get alliedAssetSymbols(): string[] {
+    return this.mainAssetConfig.alliedAssetSymbols;
+  }
+
   public get assetDecimals(): number {
     return this.mainAssetConfig.assetDecimals;
   }
@@ -342,6 +346,9 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
       allVersions.set(poolContractConfig.version, poolContractConfig);
       bridges.set(poolContractConfig.bridgeType, allVersions);
       poolConfigsByAssetAndBridge.set(poolContractConfig.assetSymbol, bridges);
+      poolContractConfig.alliedAssetSymbols.forEach((alliedAssetSymbol) => {
+        poolConfigsByAssetAndBridge.set(alliedAssetSymbol, bridges);
+      });
     });
     return poolConfigsByAssetAndBridge;
   }
@@ -351,6 +358,7 @@ export class ChainConfig extends BaseConfig<RawChainConfig, AuxData> {
       assetType: AssetType.MAIN,
       assetSymbol: this.data.assetSymbol,
       assetDecimals: this.data.assetDecimals,
+      alliedAssetSymbols: this.data.alliedAssetSymbols,
       assetAddress: MAIN_ASSET_ADDRESS,
       recommendedAmounts: this.data.recommendedAmounts,
     } as RawAssetConfig);

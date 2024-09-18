@@ -24,6 +24,12 @@ export class RawAssetConfig extends RawConfig {
   public assetSymbol: string;
 
   @Expose()
+  @IsArray()
+  @ArrayUnique()
+  @IsString({ each: true })
+  public alliedAssetSymbols: string[] = [];
+
+  @Expose()
   @IsInt()
   @IsPositive()
   public assetDecimals: number = 18;

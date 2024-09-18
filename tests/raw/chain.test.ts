@@ -115,6 +115,11 @@ test('test invalid assetSymbol', async () => {
   await expect(config.validate()).rejects.toThrow();
 });
 
+test('test invalid alliedAssetSymbol', async () => {
+  config.alliedAssetSymbols = ['ETH', 'ETH'];
+  await expect(config.validate()).rejects.toThrow();
+});
+
 test('test invalid assetDecimals', async () => {
   config.assetDecimals = 0;
   await expect(config.validate()).rejects.toThrow();

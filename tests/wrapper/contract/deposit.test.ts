@@ -35,6 +35,7 @@ beforeEach(async () => {
   mainAssetConfig = new AssetConfig({
     assetType: AssetType.MAIN,
     assetSymbol: rawMystikoConfig.chains[0].assetSymbol,
+    alliedAssetSymbols: rawMystikoConfig.chains[0].alliedAssetSymbols,
     assetDecimals: rawMystikoConfig.chains[0].assetDecimals,
     assetAddress: '0x0000000000000000000000000000000000000000',
     recommendedAmounts: rawMystikoConfig.chains[0].recommendedAmounts,
