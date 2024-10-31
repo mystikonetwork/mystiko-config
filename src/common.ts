@@ -14,6 +14,7 @@ export enum BridgeType {
   CELER = 'celer',
   LAYER_ZERO = 'layerZero',
   AXELAR = 'axelar',
+  WORMHOLE = 'wormhole',
 }
 
 /**

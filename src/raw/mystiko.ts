@@ -9,6 +9,7 @@ import {
   RawLayerZeroBridgeConfig,
   RawPolyBridgeConfig,
   RawTBridgeConfig,
+  RawWormholeBridgeConfig,
 } from './bridge';
 import { RawChainConfig } from './chain';
 import { RawCircuitConfig } from './circuit';
@@ -22,7 +23,8 @@ export type RawBridgeConfigType =
   | RawCelerBridgeConfig
   | RawLayerZeroBridgeConfig
   | RawPolyBridgeConfig
-  | RawTBridgeConfig;
+  | RawTBridgeConfig
+  | RawWormholeBridgeConfig;
 
 export class RawMystikoConfig extends RawConfig {
   @Expose()
@@ -52,6 +54,7 @@ export class RawMystikoConfig extends RawConfig {
         { value: RawLayerZeroBridgeConfig, name: BridgeType.LAYER_ZERO },
         { value: RawPolyBridgeConfig, name: BridgeType.POLY },
         { value: RawTBridgeConfig, name: BridgeType.TBRIDGE },
+        { value: RawWormholeBridgeConfig, name: BridgeType.WORMHOLE },
       ],
     },
     keepDiscriminatorProperty: true,

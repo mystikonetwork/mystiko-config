@@ -16,6 +16,7 @@ import {
   LayerZeroBridgeConfig,
   PolyBridgeConfig,
   TBridgeConfig,
+  WormholeBridgeConfig,
 } from './bridge';
 import { ChainConfig } from './chain';
 import { CircuitConfig } from './circuit';
@@ -30,7 +31,8 @@ export type BridgeConfigType =
   | CelerBridgeConfig
   | LayerZeroBridgeConfig
   | PolyBridgeConfig
-  | TBridgeConfig;
+  | TBridgeConfig
+  | WormholeBridgeConfig;
 
 export const CONFIG_BASE_URL = 'https://static.mystiko.network/config';
 
@@ -283,6 +285,8 @@ export class MystikoConfig extends BaseConfig<RawMystikoConfig> {
         bridgeConfigs.set(raw.type, new PolyBridgeConfig(raw));
       } else if (raw instanceof RawLayerZeroBridgeConfig) {
         bridgeConfigs.set(raw.type, new LayerZeroBridgeConfig(raw));
+      } else if (raw instanceof WormholeBridgeConfig) {
+        bridgeConfigs.set(raw.type, new WormholeBridgeConfig(raw));
       } else {
         bridgeConfigs.set(raw.type, new TBridgeConfig(raw));
       }
