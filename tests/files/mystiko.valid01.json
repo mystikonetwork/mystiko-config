@@ -109,6 +109,20 @@
           "maxAmount": "10000000000000000000",
           "minBridgeFee": "20000000000000000",
           "minExecutorFee": "5000000000000000"
+        },
+        {
+          "version": 7,
+          "name": "MystikoV2WormholeERC20",
+          "address": "0xda33C352E1A10F378B292d38617558a99ebc7E93",
+          "startBlock": 6928281,
+          "bridgeType": "wormhole",
+          "poolAddress": "0xE87a96c3C5840783001f6597280B708F1E59893D",
+          "peerChainId": 97,
+          "peerContractAddress": "0xF9f6219EF06C9d03B6f49770f456EF9393e8E2Bb",
+          "minAmount": "100000000000000000",
+          "maxAmount": "10000000000000000000",
+          "minBridgeFee": "0",
+          "minExecutorFee": "0"
         }
       ],
       "poolContracts": [
@@ -181,6 +195,16 @@
           "assetAddress": "0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a",
           "minRollupFee": "40000000000000000",
           "circuits": ["zokrates-2.0-rollup1"]
+        },
+        {
+          "version": 7,
+          "name": "CommitmentPool",
+          "poolName": "zeta-20240611",
+          "bridgeType": "wormhole",
+          "address": "0xE87a96c3C5840783001f6597280B708F1E59893D",
+          "startBlock": 6928279,
+          "assetAddress": "0xEC1d5CfB0bf18925aB722EeeBCB53Dc636834e8a",
+          "minRollupFee": "40000000000000000"
         }
       ],
       "assets": [{
@@ -286,6 +310,19 @@
           "maxAmount": "10000000000000000000",
           "minBridgeFee": "20000000000000000",
           "minExecutorFee": "5000000000000000"
+        },
+        {
+          "version": 7,
+          "name": "MystikoV2WormholeERC20",
+          "address": "0xF9f6219EF06C9d03B6f49770f456EF9393e8E2Bb",
+          "startBlock": 16953835,
+          "bridgeType": "wormhole",
+          "poolAddress": "0xaA5393C35B9b0558B713e3A619392D1C35954F3D",
+          "peerChainId": 3,
+          "peerContractAddress": "0xda33C352E1A10F378B292d38617558a99ebc7E93",
+          "minAmount": "100000000000000000",
+          "maxAmount": "10000000000000000000",
+          "minBridgeFee": "0"
         }
       ],
       "poolContracts": [
@@ -332,6 +369,16 @@
           "startBlock": 1000000,
           "assetAddress": "0xaA055A9888e414faF9f0DA3F4cb4C56Df8a4bdA9",
           "minRollupFee": "12345"
+        },
+        {
+          "version": 7,
+          "name": "CommitmentPool",
+          "poolName": "zeta-20240611",
+          "bridgeType": "wormhole",
+          "address": "0xaA5393C35B9b0558B713e3A619392D1C35954F3D",
+          "startBlock": 16953830,
+          "assetAddress": "0xaA055A9888e414faF9f0DA3F4cb4C56Df8a4bdA9",
+          "minRollupFee": "10000"
         }
       ],
       "assets": [{
@@ -367,6 +414,10 @@
     {
       "name": "Axelar Network",
       "type": "axelar"
+    },
+    {
+      "name": "Wormhole Bridge",
+      "type": "wormhole"
     }
   ],
   "circuits": [
